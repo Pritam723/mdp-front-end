@@ -5,6 +5,7 @@ import "primeflex/primeflex.css";
 import "./cssFiles/DataTableDemo.css";
 import ReactDOM from "react-dom";
 import { Tag } from "primereact/tag";
+import axios from "axios";
 
 import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
@@ -29,54 +30,22 @@ export default function DataTableCrudDemo() {
     pk: null,
     fields: { year: "", month: "", zippedMeterFile: null },
   };
-  let emptyProduct = {
-    id: null,
-    name: "",
-    image: null,
-    description: "",
-    category: null,
-    price: 0,
-    quantity: 0,
-    rating: 0,
-    inventoryStatus: "INSTOCK",
-  };
 
-  const [year, setYear] = useState("");
-  const [month, setMonth] = useState("");
+  // const [meterZippedFile, setMeterZippedFile] = useState();
 
-  const [meterZippedFile, setMeterZippedFile] = useState();
-
-  const newBook = () => {
-    console.log("works");
-    console.log(meterZippedFile);
-    console.log(meterZippedFile.name);
-    const uploadData = new FormData();
-    uploadData.append("year", year);
-    uploadData.append("month", month);
-    uploadData.append("meterZippedFile", meterZippedFile, meterZippedFile.name);
-    // var csrftoken = getCookie("csrftoken");
-    console.log(uploadData);
-    fetch("http://127.0.0.1:8000/fmmdp/addNewMeterFile/", {
-      method: "POST",
-      body: uploadData,
-    })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
-  };
   //////////////////////////////////// my own ///////////////////////////////////
 
+  // const [year, setYear] = useState("");
+  // const [month, setMonth] = useState("");
   const [meters, setMeters] = useState(null);
   const [meter, setMeter] = useState(emptyMeter);
   const [meterDialog, setMeterDialog] = useState(false);
   const [selectedMeters, setSelectedMeters] = useState(null);
+  const [deleteMeterDialog, setDeleteMeterDialog] = useState(false);
+  const [deleteMetersDialog, setDeleteMetersDialog] = useState(false);
 
   //////////////////////////////////////////////////////////////////////////////
 
-  //   const [products, setProducts] = useState(null);
-
-  const [deleteProductDialog, setDeleteProductDialog] = useState(false);
-  const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
-  //   const [product, setProduct] = useState(emptyProduct);
   const [submitted, setSubmitted] = useState(false);
   const [globalFilter, setGlobalFilter] = useState(null);
   const toast = useRef(null);
@@ -90,12 +59,7 @@ export default function DataTableCrudDemo() {
         setMeters(result);
         console.log(result);
       });
-    //   meterData.getMeterData().then((data) => setProducts(data));
-    // productService.getProducts().then((data) => {
-    //   console.log(data);
-    //   setProducts(data);
-    // });
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const openNew = () => {
     setMeter(emptyMeter);
@@ -108,47 +72,139 @@ export default function DataTableCrudDemo() {
     setMeterDialog(false);
   };
 
-  const hideDeleteProductDialog = () => {
-    setDeleteProductDialog(false);
+  const hideDeleteMeterDialog = () => {
+    setDeleteMeterDialog(false);
   };
 
-  const hideDeleteProductsDialog = () => {
-    setDeleteProductsDialog(false);
+  const hideDeleteMetersDialog = () => {
+    setDeleteMetersDialog(false);
   };
+  const processMeterData = () => {
+    axios
+      .post("http://127.0.0.1:8000/fmmdp/unzipMeterData/" + meter.pk)
+      .then((response) => {
+        setMeter(emptyMeter);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const processUploadedMeterData = (rowData) => {
+    setMeter(rowData);
+    return (
+      <Button
+        label="Extract/Merge/Verify/DateFilter"
+        className="p-button-rounded p-button-secondary"
+        onClick={processMeterData}
+      />
+    );
+  };
+
+  const downloadTemplate = (rowData) => {
+    return (
+      <a
+        href={
+          "http://127.0.0.1:8000/fmmdp/media/" + rowData.fields.zippedMeterFile
+        }
+        download={
+          "http://127.0.0.1:8000/fmmdp/media/" + rowData.fields.zippedMeterFile
+        }
+      >
+        {rowData.fields.zippedMeterFile}
+      </a>
+    );
+  };
+  // const newBook = () => {
+  //   console.log("works");
+  //   const uploadData = new FormData();
+  //   uploadData.append("year", meter.fields.year);
+  //   uploadData.append("month", meter.fields.month);
+  //   uploadData.append(
+  //     "meterZippedFile",
+  //     meter.fields.zippedMeterFile,
+  //     meter.fields.zippedMeterFile.name
+  //   );
+  //   console.log(uploadData);
+
+  //   axios
+  //     .post("http://127.0.0.1:8000/fmmdp/addNewMeterFile/", uploadData)
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   const saveMeter = () => {
     setSubmitted(true);
 
-    if (meter.name.trim()) {
+    if (
+      meter.fields.year.trim() != "" &&
+      meter.fields.month.trim() != "" &&
+      meter.fields.zippedMeterFile
+    ) {
       let _meters = [...meters]; // Fetching already existing meters. Because we will use it for both edit & creation
       let _meter = { ...meter };
-      if (meter.id) {
-        // Id not null means it is editing. So call update function on this id
-        const index = findIndexById(meter.id);
+      if (meter.pk) {
+        const uploadData = new FormData();
+        uploadData.append("year", meter.fields.year);
+        uploadData.append("month", meter.fields.month);
+        uploadData.append(
+          "meterZippedFile",
+          meter.fields.zippedMeterFile,
+          meter.fields.zippedMeterFile.name
+        );
+        console.log(uploadData);
+        axios
+          .post(
+            "http://127.0.0.1:8000/fmmdp/editNewMeterFile/" + meter.pk,
+            uploadData
+          )
+          .then((response) => {
+            const index = findIndexById(meter.pk);
 
-        _meters[index] = _meter;
-        toast.current.show({
-          severity: "success",
-          summary: "Successful",
-          detail: "Meter Updated",
-          life: 3000,
-        });
+            _meters[index] = _meter;
+            toast.current.show({
+              severity: "success",
+              summary: "Successful",
+              detail: "Meter data updated",
+              life: 3000,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       } else {
-        // else just call the create function of view
-        _meter.id = createId();
-        _meter.image = "product-placeholder.svg";
-        _meters.push(_meter);
-        toast.current.show({
-          severity: "success",
-          summary: "Successful",
-          detail: "Product Created",
-          life: 3000,
-        });
+        const uploadData = new FormData();
+        uploadData.append("year", meter.fields.year);
+        uploadData.append("month", meter.fields.month);
+        uploadData.append(
+          "meterZippedFile",
+          meter.fields.zippedMeterFile,
+          meter.fields.zippedMeterFile.name
+        );
+        console.log(uploadData);
+        axios
+          .post("http://127.0.0.1:8000/fmmdp/addNewMeterFile/", uploadData)
+          .then((response) => {
+            console.log(response);
+            _meter.pk = response.data.id;
+            _meters.push(_meter);
+            toast.current.show({
+              severity: "success",
+              summary: "Successful",
+              detail: "Meter data added",
+              life: 3000,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
 
       setMeters(_meters);
       setMeterDialog(false);
-      //   setProductDialog(false);
       setMeter(emptyMeter);
     }
   };
@@ -162,23 +218,35 @@ export default function DataTableCrudDemo() {
   //     setProduct({ ...product }); // product object spread
   //     setProductDialog(true);
   //   };
-
-  const confirmDeleteProduct = (meter) => {
+  const confirmDeleteMeter = (meter) => {
     setMeter(meter);
-    setDeleteProductDialog(true);
+    setDeleteMeterDialog(true);
   };
 
   const deleteProduct = () => {
-    let _meters = meters.filter((val) => val.id !== meter.id);
-    setMeter(_meters);
-    setDeleteProductDialog(false);
-    setMeter(emptyProduct);
-    toast.current.show({
-      severity: "success",
-      summary: "Successful",
-      detail: "Product Deleted",
-      life: 3000,
-    });
+    fetch("http://127.0.0.1:8000/fmmdp/deleteNewMeterFile/" + meter.pk)
+      .then((res) => {
+        console.log(res);
+        let _meters = meters.filter((val) => val.pk !== meter.pk);
+        setMeters(_meters);
+        setDeleteMeterDialog(false);
+        setMeter(emptyMeter);
+        toast.current.show({
+          severity: "success",
+          summary: "Successful",
+          detail: "Product Deleted",
+          life: 3000,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.current.show({
+          severity: "danger",
+          summary: "Unsuccessful",
+          detail: "Some error occured",
+          life: 3000,
+        });
+      });
   };
 
   const findIndexById = (id) => {
@@ -193,24 +261,14 @@ export default function DataTableCrudDemo() {
     return index;
   };
 
-  const createId = () => {
-    let id = "";
-    let chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (let i = 0; i < 5; i++) {
-      id += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return id;
-  };
-
   const confirmDeleteSelected = () => {
-    setDeleteProductsDialog(true);
+    setDeleteMetersDialog(true);
   };
 
   const deleteSelectedProducts = () => {
     let _meters = meters.filter((val) => !selectedMeters.includes(val));
     setMeters(_meters);
-    setDeleteProductsDialog(false);
+    setDeleteMetersDialog(false);
     setSelectedMeters(null);
     toast.current.show({
       severity: "success",
@@ -223,19 +281,20 @@ export default function DataTableCrudDemo() {
   const onInputChange = (e, name) => {
     const val = (e.target && e.target.value) || "";
     let _meter = { ...meter };
-    _meter[`${name}`] = val;
+    _meter["fields"][`${name}`] = val;
 
     setMeter(_meter);
   };
 
-  const onInputNumberChange = (e, name) => {
-    const val = e.value || 0;
+  const onFileChange = (e, name) => {
+    console.log("fine");
+    // const val = e.value || 0;
     let _meter = { ...meter };
-    _meter[`${name}`] = val;
+    // _meter[`${name}`] = val;
+    _meter.fields.zippedMeterFile = e.target.files[0];
 
     setMeter(_meter);
   };
-
   const leftToolbarTemplate = () => {
     return (
       <React.Fragment>
@@ -245,26 +304,26 @@ export default function DataTableCrudDemo() {
           className="p-button-success p-mr-2"
           onClick={openNew}
         />
-        <Button
+        {/* <Button
           label="Delete"
           icon="pi pi-trash"
           className="p-button-danger"
           onClick={confirmDeleteSelected}
           disabled={!selectedMeters || !selectedMeters.length}
-        />
+        /> */}
       </React.Fragment>
     );
-  };
-
-  const ratingBodyTemplate = (rowData) => {
-    return <Rating value={rowData.rating} readOnly cancel={false} />;
   };
 
   const TagDemo = () => {
     return (
       <div>
         <div className="card">
-          <Tag className="p-mr-2" severity="success" value="Success"></Tag>
+          <Tag
+            className="p-mr-2"
+            severity="success"
+            value="Not processed yet"
+          ></Tag>
         </div>
       </div>
     );
@@ -273,20 +332,18 @@ export default function DataTableCrudDemo() {
   const actionBodyTemplate = (rowData) => {
     return (
       <React.Fragment>
-        <Button
+        {/* <Button
           icon="pi pi-pencil"
           className="p-button-rounded p-button-success p-mr-2"
-          //   onClick={() => editProduct(rowData)}
           onClick={() => {
             console.log(rowData);
             editMeter(rowData);
           }}
-        />
+        /> */}
         <Button
           icon="pi pi-trash"
           className="p-button-rounded p-button-warning"
-          onClick={() => confirmDeleteProduct(rowData)}
-          //   onClick={() => confirmMeterFileDeletion(rowData)}
+          onClick={() => confirmDeleteMeter(rowData)}
         />
       </React.Fragment>
     );
@@ -317,17 +374,17 @@ export default function DataTableCrudDemo() {
         label="Save Meter Data"
         icon="pi pi-check"
         className="p-button-text"
-        onClick={() => newBook()}
+        onClick={() => saveMeter()}
       />
     </React.Fragment>
   );
-  const deleteProductDialogFooter = (
+  const deleteMeterDialogFooter = (
     <React.Fragment>
       <Button
         label="No"
         icon="pi pi-times"
         className="p-button-text"
-        onClick={hideDeleteProductDialog}
+        onClick={hideDeleteMeterDialog}
       />
       <Button
         label="Yes"
@@ -337,13 +394,13 @@ export default function DataTableCrudDemo() {
       />
     </React.Fragment>
   );
-  const deleteProductsDialogFooter = (
+  const deleteMetersDialogFooter = (
     <React.Fragment>
       <Button
         label="No"
         icon="pi pi-times"
         className="p-button-text"
-        onClick={hideDeleteProductsDialog}
+        onClick={hideDeleteMetersDialog}
       />
       <Button
         label="Yes"
@@ -375,20 +432,17 @@ export default function DataTableCrudDemo() {
           rows={10}
           rowsPerPageOptions={[5, 10, 25]}
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} Meter Data"
           globalFilter={globalFilter}
           header={header}
         >
-          <Column
+          {/* <Column
             selectionMode="multiple"
             headerStyle={{ width: "3rem" }}
-          ></Column>
+          ></Column> */}
           <Column field="fields.year" header="Year" sortable></Column>
           <Column field="fields.month" header="Month" sortable></Column>
-          <Column
-            field="fields.zippedMeterFile"
-            header="All meter Zip file"
-          ></Column>
+          <Column body={downloadTemplate} header="All meter Zip file"></Column>
 
           <Column
             field="inventoryStatus"
@@ -396,7 +450,15 @@ export default function DataTableCrudDemo() {
             body={TagDemo}
             sortable
           ></Column>
-          <Column header="Action" body={actionBodyTemplate}></Column>
+
+          <Column
+            field="inventoryStatus"
+            header="Process"
+            body={processUploadedMeterData}
+            sortable
+          ></Column>
+
+          <Column header="Delete Meter Data" body={actionBodyTemplate}></Column>
         </DataTable>
       </div>
 
@@ -410,6 +472,64 @@ export default function DataTableCrudDemo() {
         onHide={hideDialog} // The cross button at right
       >
         <div className="p-field">
+          <label htmlFor="year" className="p-sr-only">
+            Year
+          </label>
+          <InputText
+            id="year"
+            type="text"
+            placeholder="Year"
+            defaultValue={meter.fields.year}
+            onChange={(e) => onInputChange(e, "year")}
+            required
+            // rows={5}
+            // cols={10}
+            // defaultValue={meter.fields.year}
+          />
+          {submitted && !meter.fields.year && (
+            <small className="p-error">Year is required.</small>
+          )}
+        </div>
+
+        <div className="p-field">
+          <label htmlFor="month" className="p-sr-only">
+            Month
+          </label>
+          <InputText
+            id="month"
+            type="text"
+            placeholder="Month"
+            defaultValue={meter.fields.month}
+            onChange={(e) => onInputChange(e, "month")}
+            required
+            // rows={5}
+            // cols={10}
+            // defaultValue={meter.fields.year}
+          />
+          {submitted && !meter.fields.month && (
+            <small className="p-error">Month is required.</small>
+          )}
+        </div>
+        <div className="p-field">
+          <label htmlFor="zippedMeterFile" className="p-sr-only">
+            Meter Zip File{" "}
+          </label>
+          <input
+            id="zippedMeterFile"
+            type="file"
+            onChange={(e) => onFileChange(e, "zippedMeterFile")}
+            required
+            // rows={5}
+            // cols={10}
+            // defaultValue={meter.fields.year}
+          />
+          {submitted && !meter.fields.zippedMeterFile && (
+            <small className="p-error">File is required.</small>
+          )}
+        </div>
+        {/* // onChange={(evt) => setMeterZippedFile(evt.target.files[0])} */}
+
+        {/* <div className="p-field">
           <label className="p-sr-only">Year</label>
 
           <InputText
@@ -421,9 +541,9 @@ export default function DataTableCrudDemo() {
           {submitted && !meter.name && (
             <small className="p-error">Name is required.</small>
           )}
-        </div>
+        </div> */}
 
-        <div className="p-field">
+        {/* <div className="p-field">
           <label className="p-sr-only">Month</label>
           <InputText
             type="text"
@@ -431,24 +551,26 @@ export default function DataTableCrudDemo() {
             placeholder="Month"
             onChange={(evt) => setMonth(evt.target.value)}
           />
-        </div>
-        <div className="p-field">
+        </div> */}
+
+        {/* <div className="p-field">
           <label className="p-sr-only">Meter Zip File </label>
 
           <input
             type="file"
+            // defaultValue="fff"
             onChange={(evt) => setMeterZippedFile(evt.target.files[0])}
           />
-        </div>
+        </div> */}
       </Dialog>
 
       <Dialog
-        visible={deleteProductDialog}
+        visible={deleteMeterDialog}
         style={{ width: "450px" }}
         header="Confirm"
         modal
-        footer={deleteProductDialogFooter}
-        onHide={hideDeleteProductDialog}
+        footer={deleteMeterDialogFooter}
+        onHide={hideDeleteMeterDialog}
       >
         <div className="confirmation-content">
           <i
@@ -457,19 +579,20 @@ export default function DataTableCrudDemo() {
           />
           {meter && (
             <span>
-              Are you sure you want to delete <b>{meter.name}</b>?
+              Are you sure you want to delete{" "}
+              <b>{meter.fields.zippedMeterFile}</b>?
             </span>
           )}
         </div>
       </Dialog>
 
       <Dialog
-        visible={deleteProductsDialog}
+        visible={deleteMetersDialog}
         style={{ width: "450px" }}
         header="Confirm"
         modal
-        footer={deleteProductsDialogFooter}
-        onHide={hideDeleteProductsDialog}
+        footer={deleteMetersDialogFooter}
+        onHide={hideDeleteMetersDialog}
       >
         <div className="confirmation-content">
           <i
@@ -477,7 +600,9 @@ export default function DataTableCrudDemo() {
             style={{ fontSize: "2rem" }}
           />
           {meter && (
-            <span>Are you sure you want to delete the selected products?</span>
+            <span>
+              Are you sure you want to delete the selected Meter Data?
+            </span>
           )}
         </div>
       </Dialog>

@@ -1,11 +1,3 @@
-import "primeicons/primeicons.css";
-import "primereact/resources/themes/saga-blue/theme.css";
-import "primereact/resources/primereact.css";
-import "primeflex/primeflex.css";
-import "./cssFiles/DataTableDemo.css";
-import ReactDOM from "react-dom";
-import { Tag } from "primereact/tag";
-
 import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 import { DataTable } from "primereact/datatable";
@@ -21,16 +13,9 @@ import { RadioButton } from "primereact/radiobutton";
 import { InputNumber } from "primereact/inputnumber";
 import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
-// import "./DataTableDemo.css";
+import "./cssFiles/DataTableDemo.css";
 
 export default function DataTableCrudDemo() {
-  let emptyMeter = {
-    id: null,
-    year: "",
-    month: "",
-    zippedMeterFile: null,
-    status: "",
-  };
   let emptyProduct = {
     id: null,
     name: "",
@@ -43,38 +28,7 @@ export default function DataTableCrudDemo() {
     inventoryStatus: "INSTOCK",
   };
 
-  const [year, setYear] = useState("");
-  const [month, setMonth] = useState("");
-
-  const [meterZippedFile, setMeterZippedFile] = useState();
-
-  const newBook = () => {
-    console.log("works");
-    console.log(meterZippedFile);
-    console.log(meterZippedFile.name);
-    const uploadData = new FormData();
-    uploadData.append("year", year);
-    uploadData.append("month", month);
-    uploadData.append("meterZippedFile", meterZippedFile, meterZippedFile.name);
-    // var csrftoken = getCookie("csrftoken");
-    console.log(uploadData);
-    // fetch("http://127.0.0.1:8000/fmmdp/addNewMeterFile/", {
-    //   method: "POST",
-    //   body: uploadData,
-    // })
-    //   .then((res) => console.log(res))
-    //   .catch((error) => console.log(error));
-  };
-  //////////////////////////////////// my own ///////////////////////////////////
-
-  const [meters, setMeters] = useState(null);
-  const [meter, setMeter] = useState(emptyMeter);
-  const [meterDialog, setMeterDialog] = useState(false);
-
-  //////////////////////////////////////////////////////////////////////////////
-
   const [products, setProducts] = useState(null);
-
   const [productDialog, setProductDialog] = useState(false);
   const [deleteProductDialog, setDeleteProductDialog] = useState(false);
   const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
@@ -87,19 +41,21 @@ export default function DataTableCrudDemo() {
   const productService = new ProductService();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fmmdp/getAllMeterData/")
-      .then((res) => res.json())
-      .then((result) => {
-        setMeters(result);
-        console.log(result);
-      });
-    //   meterData.getMeterData().then((data) => setProducts(data));
-    productService.getProducts().then((data) => {
-      console.log(data);
-      setProducts(data);
-    });
+    productService.getProducts().then((data) => setProducts(data));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const formatCurrency = (value) => {
+    return value.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+  };
+  useEffect(() => {
+    console.log("meters changed");
+  }, [products]);
+  useEffect(() => {
+    console.log("meter changed");
+  }, [product]);
   const openNew = () => {
     setProduct(emptyProduct);
     setSubmitted(false);
@@ -119,28 +75,26 @@ export default function DataTableCrudDemo() {
     setDeleteProductsDialog(false);
   };
 
-  const saveMeter = () => {
+  const saveProduct = () => {
     setSubmitted(true);
 
-    if (meter.name.trim()) {
-      let _meters = [...meters]; // Fetching already existing meters. Because we will use it for both edit & creation
-      let _meter = { ...meter };
-      if (meter.id) {
-        // Id not null means it is editing. So call update function on this id
-        const index = findIndexById(meter.id);
+    if (product.name.trim()) {
+      let _products = [...products];
+      let _product = { ...product };
+      if (product.id) {
+        const index = findIndexById(product.id);
 
-        _meters[index] = _meter;
+        _products[index] = _product;
         toast.current.show({
           severity: "success",
           summary: "Successful",
-          detail: "Meter Updated",
+          detail: "Product Updated",
           life: 3000,
         });
       } else {
-        // else just call the create function of view
-        _meter.id = createId();
-        _meter.image = "product-placeholder.svg";
-        _meters.push(_meter);
+        _product.id = createId();
+        _product.image = "product-placeholder.svg";
+        _products.push(_product);
         toast.current.show({
           severity: "success",
           summary: "Successful",
@@ -149,22 +103,16 @@ export default function DataTableCrudDemo() {
         });
       }
 
-      setMeters(_meters);
-      setMeterDialog(false);
-      //   setProductDialog(false);
-      setMeter(emptyMeter);
+      setProducts(_products);
+      setProductDialog(false);
+      setProduct(emptyProduct);
     }
   };
 
-  const editMeter = (meter) => {
-    setMeter({ ...meter }); // meter object spread
-    setMeterDialog(true);
+  const editProduct = (product) => {
+    setProduct({ ...product });
+    setProductDialog(true);
   };
-
-  //   const editProduct = (product) => {
-  //     setProduct({ ...product }); // product object spread
-  //     setProductDialog(true);
-  //   };
 
   const confirmDeleteProduct = (product) => {
     setProduct(product);
@@ -184,18 +132,10 @@ export default function DataTableCrudDemo() {
     });
   };
 
-  //   const findIndexById = (id) => {
-  //     let index = -1;
-  //     for (let i = 0; i < products.length; i++) {
-  //       if (products[i].id === id) {
-  //         index = i;
-  //         break;
-  //       }
-  //     }
   const findIndexById = (id) => {
     let index = -1;
-    for (let i = 0; i < meters.length; i++) {
-      if (meters[i].id === id) {
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].id === id) {
         index = i;
         break;
       }
@@ -235,11 +175,11 @@ export default function DataTableCrudDemo() {
     });
   };
 
-  //   const onCategoryChange = (e) => {
-  //     let _product = { ...product };
-  //     _product["category"] = e.value;
-  //     setProduct(_product);
-  //   };
+  const onCategoryChange = (e) => {
+    let _product = { ...product };
+    _product["category"] = e.value;
+    setProduct(_product);
+  };
 
   const onInputChange = (e, name) => {
     const val = (e.target && e.target.value) || "";
@@ -277,52 +217,56 @@ export default function DataTableCrudDemo() {
     );
   };
 
-  //   const rightToolbarTemplate = () => {
-  //     return (
-  //       <React.Fragment>
-  //         <FileUpload
-  //           mode="basic"
-  //           accept="image/*"
-  //           maxFileSize={1000000}
-  //           label="Import"
-  //           chooseLabel="Import"
-  //           className="p-mr-2 p-d-inline-block"
-  //         />
-  //         <Button
-  //           label="Export"
-  //           icon="pi pi-upload"
-  //           className="p-button-help"
-  //           onClick={exportCSV}
-  //         />
-  //       </React.Fragment>
-  //     );
-  //   };
+  const rightToolbarTemplate = () => {
+    return (
+      <React.Fragment>
+        <FileUpload
+          mode="basic"
+          accept="image/*"
+          maxFileSize={1000000}
+          label="Import"
+          chooseLabel="Import"
+          className="p-mr-2 p-d-inline-block"
+        />
+        <Button
+          label="Export"
+          icon="pi pi-upload"
+          className="p-button-help"
+          onClick={exportCSV}
+        />
+      </React.Fragment>
+    );
+  };
 
-  //   const imageBodyTemplate = (rowData) => {
-  //     return (
-  //       <img
-  //         src={`showcase/demo/images/product/${rowData.image}`}
-  //         onError={(e) =>
-  //           (e.target.src =
-  //             "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
-  //         }
-  //         alt={rowData.image}
-  //         className="product-image"
-  //       />
-  //     );
-  //   };
+  const imageBodyTemplate = (rowData) => {
+    return (
+      <img
+        src={`showcase/demo/images/product/${rowData.image}`}
+        onError={(e) =>
+          (e.target.src =
+            "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+        }
+        alt={rowData.image}
+        className="product-image"
+      />
+    );
+  };
+
+  const priceBodyTemplate = (rowData) => {
+    return formatCurrency(rowData.price);
+  };
 
   const ratingBodyTemplate = (rowData) => {
     return <Rating value={rowData.rating} readOnly cancel={false} />;
   };
 
-  const TagDemo = () => {
+  const statusBodyTemplate = (rowData) => {
     return (
-      <div>
-        <div className="card">
-          <Tag className="p-mr-2" severity="success" value="Success"></Tag>
-        </div>
-      </div>
+      <span
+        className={`product-badge status-${rowData.inventoryStatus.toLowerCase()}`}
+      >
+        {rowData.inventoryStatus}
+      </span>
     );
   };
 
@@ -332,14 +276,12 @@ export default function DataTableCrudDemo() {
         <Button
           icon="pi pi-pencil"
           className="p-button-rounded p-button-success p-mr-2"
-          //   onClick={() => editProduct(rowData)}
-          onClick={() => editMeter(rowData)}
+          onClick={() => editProduct(rowData)}
         />
         <Button
           icon="pi pi-trash"
           className="p-button-rounded p-button-warning"
           onClick={() => confirmDeleteProduct(rowData)}
-          //   onClick={() => confirmMeterFileDeletion(rowData)}
         />
       </React.Fragment>
     );
@@ -347,7 +289,7 @@ export default function DataTableCrudDemo() {
 
   const header = (
     <div className="table-header">
-      <h5 className="p-m-0">Manage Meter Files</h5>
+      <h5 className="p-m-0">Manage Products</h5>
       <span className="p-input-icon-left">
         <i className="pi pi-search" />
         <InputText
@@ -361,16 +303,16 @@ export default function DataTableCrudDemo() {
   const productDialogFooter = (
     <React.Fragment>
       <Button
-        label="Discard Changes"
+        label="Cancel"
         icon="pi pi-times"
         className="p-button-text"
         onClick={hideDialog}
       />
       <Button
-        label="Save Meter Data"
+        label="Save"
         icon="pi pi-check"
         className="p-button-text"
-        onClick={saveMeter}
+        onClick={saveProduct}
       />
     </React.Fragment>
   );
@@ -415,12 +357,12 @@ export default function DataTableCrudDemo() {
         <Toolbar
           className="p-mb-4"
           left={leftToolbarTemplate}
-          //   right={rightToolbarTemplate}
+          right={rightToolbarTemplate}
         ></Toolbar>
 
         <DataTable
           ref={dt}
-          value={meters}
+          value={products}
           selection={selectedProducts}
           onSelectionChange={(e) => setSelectedProducts(e.value)}
           dataKey="id"
@@ -436,80 +378,145 @@ export default function DataTableCrudDemo() {
             selectionMode="multiple"
             headerStyle={{ width: "3rem" }}
           ></Column>
-          <Column field="fields.year" header="Year" sortable></Column>
-          <Column field="fields.month" header="Month" sortable></Column>
+          <Column field="code" header="Code" sortable></Column>
+          <Column field="name" header="Name" sortable></Column>
+          <Column header="Image" body={imageBodyTemplate}></Column>
           <Column
-            field="fields.zippedMeterFile"
-            header="All meter Zip file"
+            field="price"
+            header="Price"
+            body={priceBodyTemplate}
+            sortable
           ></Column>
-
+          <Column field="category" header="Category" sortable></Column>
+          <Column
+            field="rating"
+            header="Reviews"
+            body={ratingBodyTemplate}
+            sortable
+          ></Column>
           <Column
             field="inventoryStatus"
             header="Status"
-            body={TagDemo}
+            body={statusBodyTemplate}
             sortable
           ></Column>
-          <Column header="Action" body={actionBodyTemplate}></Column>
+          <Column body={actionBodyTemplate}></Column>
         </DataTable>
       </div>
 
       <Dialog
-        visible={meterDialog}
+        visible={productDialog}
         style={{ width: "450px" }}
-        header="Add Meter Data"
+        header="Product Details"
         modal
         className="p-fluid"
         footer={productDialogFooter}
-        onHide={hideDialog} // The cross button at right
+        onHide={hideDialog}
       >
+        {product.image && (
+          <img
+            src={`showcase/demo/images/product/${product.image}`}
+            onError={(e) =>
+              (e.target.src =
+                "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+            }
+            alt={product.image}
+            className="product-image"
+          />
+        )}
         <div className="p-field">
-          <label className="p-sr-only">Year</label>
-          {/* <InputText
+          <label htmlFor="name">Name</label>
+          <InputText
             id="name"
             value={product.name}
             onChange={(e) => onInputChange(e, "name")}
             required
             autoFocus
             className={classNames({ "p-invalid": submitted && !product.name })}
-          /> */}
-
-          <InputText
-            type="text"
-            value={year}
-            placeholder="Year"
-            onChange={(evt) => setYear(evt.target.value)}
           />
           {submitted && !product.name && (
             <small className="p-error">Name is required.</small>
           )}
         </div>
-        {/* <div className="p-field">
+        <div className="p-field">
           <label htmlFor="description">Description</label>
           <InputTextarea
             id="description"
             value={product.description}
             onChange={(e) => onInputChange(e, "description")}
             required
-            rows={5}
-            cols={10}
-          />
-        </div> */}
-        <div className="p-field">
-          <label className="p-sr-only">Month</label>
-          <InputText
-            type="text"
-            value={month}
-            placeholder="Month"
-            onChange={(evt) => setMonth(evt.target.value)}
+            rows={3}
+            cols={20}
           />
         </div>
-        <div className="p-field">
-          <label className="p-sr-only">Meter Zip File </label>
 
-          <input
-            type="file"
-            onChange={(evt) => setMeterZippedFile(evt.target.files[0])}
-          />
+        <div className="p-field">
+          <label className="p-mb-3">Category</label>
+          <div className="p-formgrid p-grid">
+            <div className="p-field-radiobutton p-col-6">
+              <RadioButton
+                inputId="category1"
+                name="category"
+                value="Accessories"
+                onChange={onCategoryChange}
+                checked={product.category === "Accessories"}
+              />
+              <label htmlFor="category1">Accessories</label>
+            </div>
+            <div className="p-field-radiobutton p-col-6">
+              <RadioButton
+                inputId="category2"
+                name="category"
+                value="Clothing"
+                onChange={onCategoryChange}
+                checked={product.category === "Clothing"}
+              />
+              <label htmlFor="category2">Clothing</label>
+            </div>
+            <div className="p-field-radiobutton p-col-6">
+              <RadioButton
+                inputId="category3"
+                name="category"
+                value="Electronics"
+                onChange={onCategoryChange}
+                checked={product.category === "Electronics"}
+              />
+              <label htmlFor="category3">Electronics</label>
+            </div>
+            <div className="p-field-radiobutton p-col-6">
+              <RadioButton
+                inputId="category4"
+                name="category"
+                value="Fitness"
+                onChange={onCategoryChange}
+                checked={product.category === "Fitness"}
+              />
+              <label htmlFor="category4">Fitness</label>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-formgrid p-grid">
+          <div className="p-field p-col">
+            <label htmlFor="price">Price</label>
+            <InputNumber
+              id="price"
+              value={product.price}
+              onValueChange={(e) => onInputNumberChange(e, "price")}
+              mode="currency"
+              currency="USD"
+              locale="en-US"
+            />
+          </div>
+          <div className="p-field p-col">
+            <label htmlFor="quantity">Quantity</label>
+            <InputNumber
+              id="quantity"
+              value={product.quantity}
+              onValueChange={(e) => onInputNumberChange(e, "quantity")}
+              integeronly
+            />
+          </div>
         </div>
       </Dialog>
 
@@ -555,6 +562,3 @@ export default function DataTableCrudDemo() {
     </div>
   );
 }
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<DataTableCrudDemo />, rootElement);
