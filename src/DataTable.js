@@ -22,6 +22,9 @@ import { RadioButton } from "primereact/radiobutton";
 import { InputNumber } from "primereact/inputnumber";
 import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
+import { Dropdown } from "primereact/dropdown";
+import { useHistory } from "react-router-dom";
+
 // import "./DataTableDemo.css";
 
 export default function DataTableCrudDemo() {
@@ -51,7 +54,7 @@ export default function DataTableCrudDemo() {
   const toast = useRef(null);
   const dt = useRef(null);
   const productService = new ProductService();
-
+  let history = useHistory();
   useEffect(() => {
     fetch("http://127.0.0.1:8000/fmmdp/getAllMeterData/")
       .then((res) => res.json())
@@ -60,6 +63,14 @@ export default function DataTableCrudDemo() {
         console.log(result);
       });
   }, []);
+
+  const months = [
+    { month: "January", value: "January" },
+    { month: "February", value: "February" },
+    { month: "March", value: "March" },
+    { month: "April", value: "April" },
+    { month: "May", value: "May" },
+  ];
 
   const openNew = () => {
     setMeter(emptyMeter);
@@ -79,9 +90,9 @@ export default function DataTableCrudDemo() {
   const hideDeleteMetersDialog = () => {
     setDeleteMetersDialog(false);
   };
-  const processMeterData = () => {
+  const processMeterData = (id) => {
     axios
-      .post("http://127.0.0.1:8000/fmmdp/unzipMeterData/" + meter.pk)
+      .post("http://127.0.0.1:8000/fmmdp/unzipMeterData/" + id)
       .then((response) => {
         setMeter(emptyMeter);
       })
@@ -89,29 +100,47 @@ export default function DataTableCrudDemo() {
         console.log(error);
       });
   };
+
+  const workWithMeterData = (rowData) => {
+    return (
+      <Button
+        label="Work with Meter Data"
+        className="p-button-rounded p-button-secondary"
+        onClick={() => history.push("/meterFile/" + rowData.pk)}
+      />
+    );
+  };
   const processUploadedMeterData = (rowData) => {
-    setMeter(rowData);
     return (
       <Button
         label="Extract/Merge/Verify/DateFilter"
         className="p-button-rounded p-button-secondary"
-        onClick={processMeterData}
+        onClick={() => processMeterData(rowData.pk)}
       />
     );
   };
 
   const downloadTemplate = (rowData) => {
     return (
-      <a
-        href={
-          "http://127.0.0.1:8000/fmmdp/media/" + rowData.fields.zippedMeterFile
-        }
-        download={
-          "http://127.0.0.1:8000/fmmdp/media/" + rowData.fields.zippedMeterFile
-        }
-      >
-        {rowData.fields.zippedMeterFile}
-      </a>
+      <>
+        <a
+          href={
+            "http://127.0.0.1:8000/fmmdp/media/" +
+            rowData.fields.zippedMeterFile
+          }
+          download={
+            "http://127.0.0.1:8000/fmmdp/media/" +
+            rowData.fields.zippedMeterFile
+          }
+        >
+          {rowData.fields.zippedMeterFile
+            ? rowData.fields.zippedMeterFile.split("/").slice(-1).pop()
+            : null}
+        </a>
+        <br />
+        <br />
+        <TagDemo />
+      </>
     );
   };
   // const newBook = () => {
@@ -444,19 +473,25 @@ export default function DataTableCrudDemo() {
           <Column field="fields.month" header="Month" sortable></Column>
           <Column body={downloadTemplate} header="All meter Zip file"></Column>
 
-          <Column
+          {/* <Column
             field="inventoryStatus"
             header="Status"
             body={TagDemo}
             sortable
-          ></Column>
+          ></Column> */}
 
           <Column
             field="inventoryStatus"
             header="Process"
-            body={processUploadedMeterData}
+            body={workWithMeterData}
             sortable
           ></Column>
+          {/* <Column
+            field="inventoryStatus"
+            header="Process"
+            body={processUploadedMeterData}
+            sortable
+          ></Column> */}
 
           <Column header="Delete Meter Data" body={actionBodyTemplate}></Column>
         </DataTable>
@@ -490,6 +525,28 @@ export default function DataTableCrudDemo() {
             <small className="p-error">Year is required.</small>
           )}
         </div>
+        {/* ////////////////////////////////////////////// */}
+        {/* <div className="p-field">
+          <label htmlFor="month" className="p-sr-only">
+            Month
+          </label>
+          <Dropdown
+            contentStyle={{ overflow: "visible" }}
+            id="month"
+            // appendTo="body"
+            // defaultValue={meter.fields.month}
+            // value={meter.fields.month}
+            options={months}
+            onChange={(e) => onInputChange(e, "month")}
+            optionLabel="month"
+            placeholder="Month"
+          />
+          {submitted && !meter.fields.month && (
+            <small className="p-error">Month is required.</small>
+          )}
+        </div> */}
+
+        {/* ///////////////////////////////////////////// */}
 
         <div className="p-field">
           <label htmlFor="month" className="p-sr-only">
@@ -502,14 +559,12 @@ export default function DataTableCrudDemo() {
             defaultValue={meter.fields.month}
             onChange={(e) => onInputChange(e, "month")}
             required
-            // rows={5}
-            // cols={10}
-            // defaultValue={meter.fields.year}
           />
           {submitted && !meter.fields.month && (
             <small className="p-error">Month is required.</small>
           )}
         </div>
+
         <div className="p-field">
           <label htmlFor="zippedMeterFile" className="p-sr-only">
             Meter Zip File{" "}
