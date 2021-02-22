@@ -1,0 +1,116 @@
+// import React, { useEffect, useState } from "react";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   Redirect,
+//   useRouteMatch,
+//   useParams,
+// } from "react-router-dom";
+// import "../cssFiles/Grid.css";
+// import "primeflex/primeflex.css";
+// import { Fieldset } from "primereact/fieldset";
+// import { Button } from "primereact/button";
+// import axios from "axios";
+// import FolderStructure from "../FolderStructure";
+
+// export default function ParticularMeter(props) {
+//   let { meterIdParam } = useParams();
+
+//   useEffect(() => {
+//     fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+//       .then((res) => res.json())
+//       .then((result) => {
+//         // setMeter(result[0]);
+//         console.log(result);
+//       });
+//   }, []);
+
+//   return (
+//     <div className="p-col">
+//       <Fieldset legend="MWH Files" toggleable>
+//         Not processed yet
+//       </Fieldset>
+//     </div>
+//   );
+// }
+
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
+import "../cssFiles/Grid.css";
+import "primeflex/primeflex.css";
+import { Fieldset } from "primereact/fieldset";
+import { Button } from "primereact/button";
+import axios from "axios";
+import FolderStructure from "../FolderStructure";
+import { ProgressBar } from "primereact/progressbar";
+
+export default function ParticularMeterExtract(props) {
+  let emptyMeter = {
+    model: "fifteenmmdp.allmeterfiles",
+    pk: null,
+    fields: {
+      year: "",
+      month: "",
+      zippedMeterFile: null,
+      dirStructure: null,
+      status: null,
+      dirStructureRealMWH: null,
+      dirStructureFictMWH: null,
+      dirStructureFinalOutput: null,
+    },
+  };
+  //   const location = useLocation();
+  let { meterIdParam } = useParams();
+  let match = useRouteMatch();
+
+  const [meter, setMeter] = useState(emptyMeter);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+      .then((res) => res.json())
+      .then((result) => {
+        setMeter(result[0]);
+        console.log(result);
+      });
+  }, []);
+
+  return (
+    <>
+      <div className="p-col">
+        {/* <Fieldset legend="Real Meter MWH Files" toggleable> */}
+        {props.progressbarVisible ? (
+          <>
+            <h5>Processing</h5>
+            <ProgressBar
+              mode="indeterminate"
+              style={{ height: "6px" }}
+            ></ProgressBar>
+          </>
+        ) : meter.fields.dirStructureRealMWH ? (
+          <FolderStructure
+            dir={meter.fields.dirStructureRealMWH}
+            fileType="RealMeterMWHFiles"
+          />
+        ) : (
+          "Real Meter MWH Files not created yet"
+        )}
+        {/* </Fieldset> */}
+      </div>
+      <div className="p-col">
+        <Fieldset legend="Error during Real Meter MWH Creation" toggleable>
+          {props.ErrorMessage}
+        </Fieldset>
+      </div>
+    </>
+  );
+}

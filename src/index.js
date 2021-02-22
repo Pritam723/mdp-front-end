@@ -1,17 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import FileUploadDemo from "./FileUpload";
+import FormLayoutDemo from "./FormLayoutDemo";
+import AppWrapper from "./AppWrapper";
+import DataTable from "./DataTable";
+import TempSave from "./tempSave";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import SidebarActions from "./SidebarActions";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<AppWrapper />, document.getElementById("root"));
