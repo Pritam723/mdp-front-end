@@ -22,8 +22,9 @@ const File = ({ name, id, node }) => {
     dispatch({ type: FILE.EDIT, payload: { id, name } });
     setEditing(false);
   };
-  const commitDelete = () => {
-    dispatch({ type: FILE.DELETE, payload: { id } });
+  const commitDelete = (event) => {
+    // console.log(event);
+    // dispatch({ type: FILE.DELETE, payload: { id } });
   };
   const handleNodeClick = React.useCallback(
     (e) => {
@@ -58,8 +59,8 @@ const File = ({ name, id, node }) => {
           </StyledName>
           {isImparative && (
             <div className="actions">
-              <AiOutlineEdit onClick={toggleEditing} />
-              <AiOutlineDelete onClick={commitDelete} />
+              {/* <AiOutlineEdit onClick={toggleEditing} />
+              <AiOutlineDelete onClick={commitDelete} /> */}
             </div>
           )}
         </ActionsWrapper>

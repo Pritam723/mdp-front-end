@@ -117,10 +117,10 @@ const Folder = ({ id, name, children, node }) => {
 
           {isImparative && (
             <div className="actions">
-              <AiOutlineEdit onClick={handleFolderRename} />
+              {/* <AiOutlineEdit onClick={handleFolderRename} />
               <AiOutlineFileAdd onClick={handleFileCreation} />
               <AiOutlineFolderAdd onClick={handleFolderCreation} />
-              <AiOutlineDelete onClick={commitDeleteFolder} />
+              <AiOutlineDelete onClick={commitDeleteFolder} /> */}
             </div>
           )}
         </ActionsWrapper>

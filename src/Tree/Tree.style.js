@@ -54,8 +54,8 @@ export const StyledName = styled.div`
 
 export const Collapse = styled.div`
   height: max-content;
-  max-height: ${p => (p.isOpen ? "800px" : "0px")};
-  overflow: hidden;
+  max-height: ${(p) => (p.isOpen ? "800px" : "0px")};
+  overflow: scroll;
   transition: 0.3s ease-in-out;
 `;
 

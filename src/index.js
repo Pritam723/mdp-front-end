@@ -6,4 +6,6 @@ import AppWrapper from "./AppWrapper";
 import DataTable from "./DataTable";
 import TempSave from "./tempSave";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import SidebarActions from "./SidebarActions";
+
 ReactDOM.render(<AppWrapper />, document.getElementById("root"));
