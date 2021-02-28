@@ -7,7 +7,7 @@ import { Button } from "primereact/button";
 import SidebarActions from "./SidebarActions";
 import axios from "axios";
 
-export default function FolderStructure(props) {
+export default function FolderStructureDateWise(props) {
   // Just add objects to this
   const FileTypeMap = {
     NPCFiles: {
@@ -22,8 +22,7 @@ export default function FolderStructure(props) {
     },
   };
 
-  // const [data, setData] = useState([JSON.parse(props.dir)]);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([JSON.parse(props.dir)]);
 
   const [fileName, setFileName] = useState(null);
   const [changeMethod, setChangeMethod] = useState(null);
@@ -38,12 +37,11 @@ export default function FolderStructure(props) {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    console.log(props);
-    setData([props.dir]);
+    // setData();
     setFileName(FileTypeMap[props.fileType]._fileName);
     setChangeMethod(FileTypeMap[props.fileType]._changeMethod);
     setdownloadMethod(FileTypeMap[props.fileType]._downloadMethod);
-  }, [props]);
+  }, []);
   // const SidebarDemo = () => {
   //   return (
   //     <div>
@@ -197,7 +195,6 @@ export default function FolderStructure(props) {
           className="p-button-secondary"
         />
       </Sidebar>
-
       <Tree data={data} onUpdate={handleUpdate} onNodeClick={handleClick} />
     </div>
   );

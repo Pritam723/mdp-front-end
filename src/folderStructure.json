@@ -1,0 +1,2746 @@
+let x = [
+  {
+    "name": "Real Meter MWH Files",
+    "type": "folder",
+    "path": "meterFile\\meterFile1\\Real Meter MWH Files",
+    "files": [
+      {
+        "name": "07-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 1,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 2,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 3,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 4,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 5,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 6,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 7,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 8,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 9,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 10,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 11,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 12,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 13,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 14,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 15,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 16,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 17,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 18,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 19,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 20,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 21,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 22,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 23,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 24,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 25,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 26,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 27,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 28,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 29,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 30,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 31,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 32,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 33,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 34,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 35,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 36,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 37,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 38,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 39,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 40,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 41,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 42,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 43,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 44,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 45,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 46,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 47,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 48,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 49,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 50,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 51,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 52,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 53,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 54,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 55,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 56,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 57,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 58,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 59,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 60,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 61,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 62,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 63,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 64,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\07-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      },
+      {
+        "name": "08-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 65,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 66,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 67,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 68,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 69,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 70,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 71,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 72,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 73,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 74,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 75,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 76,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 77,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 78,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 79,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 80,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 81,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 82,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 83,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 84,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 85,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 86,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 87,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 88,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 89,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 90,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 91,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 92,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 93,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 94,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 95,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 96,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 97,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 98,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 99,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 100,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 101,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 102,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 103,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 104,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 105,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 106,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 107,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 108,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 109,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 110,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 111,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 112,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 113,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 114,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 115,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 116,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 117,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 118,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 119,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 120,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 121,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 122,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 123,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 124,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 125,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 126,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 127,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 128,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\08-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      },
+      {
+        "name": "09-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 129,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 130,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 131,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 132,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 133,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 134,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 135,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 136,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 137,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 138,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 139,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 140,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 141,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 142,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 143,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 144,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 145,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 146,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 147,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 148,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 149,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 150,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 151,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 152,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 153,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 154,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 155,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 156,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 157,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 158,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 159,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 160,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 161,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 162,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 163,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 164,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 165,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 166,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 167,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 168,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 169,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 170,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 171,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 172,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 173,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 174,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 175,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 176,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 177,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 178,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 179,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 180,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 181,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 182,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 183,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 184,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 185,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 186,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 187,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 188,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 189,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 190,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 191,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 192,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\09-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      },
+      {
+        "name": "10-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 193,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 194,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 195,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 196,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 197,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 198,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 199,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 200,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 201,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 202,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 203,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 204,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 205,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 206,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 207,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 208,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 209,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 210,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 211,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 212,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 213,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 214,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 215,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 216,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 217,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 218,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 219,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 220,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 221,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 222,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 223,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 224,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 225,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 226,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 227,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 228,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 229,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 230,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 231,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 232,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 233,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 234,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 235,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 236,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 237,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 238,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 239,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 240,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 241,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 242,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 243,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 244,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 245,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 246,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 247,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 248,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 249,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 250,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 251,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 252,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 253,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 254,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 255,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 256,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\10-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      },
+      {
+        "name": "11-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 257,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 258,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 259,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 260,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 261,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 262,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 263,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 264,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 265,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 266,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 267,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 268,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 269,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 270,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 271,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 272,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 273,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 274,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 275,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 276,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 277,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 278,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 279,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 280,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 281,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 282,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 283,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 284,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 285,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 286,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 287,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 288,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 289,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 290,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 291,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 292,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 293,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 294,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 295,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 296,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 297,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 298,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 299,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 300,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 301,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 302,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 303,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 304,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 305,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 306,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 307,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 308,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 309,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 310,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 311,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 312,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 313,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 314,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 315,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 316,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 317,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 318,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 319,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 320,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\11-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      },
+      {
+        "name": "12-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 321,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 322,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 323,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 324,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 325,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 326,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 327,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 328,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 329,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 330,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 331,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 332,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 333,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 334,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 335,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 336,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 337,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 338,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 339,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 340,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 341,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 342,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 343,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 344,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 345,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 346,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 347,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 348,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 349,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 350,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 351,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 352,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 353,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 354,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 355,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 356,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 357,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 358,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 359,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 360,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 361,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 362,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 363,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 364,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 365,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 366,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 367,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 368,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 369,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 370,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 371,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 372,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 373,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 374,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 375,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 376,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 377,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 378,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 379,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 380,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 381,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 382,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 383,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 384,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\12-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      },
+      {
+        "name": "13-12-20",
+        "type": "folder",
+        "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20",
+        "files": [
+          {
+            "name": "ER-1002-A.MWH",
+            "id": 385,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1002-A.MWH"
+          },
+          {
+            "name": "ER-1004-A.MWH",
+            "id": 386,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1004-A.MWH"
+          },
+          {
+            "name": "ER-1005-A.MWH",
+            "id": 387,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1005-A.MWH"
+          },
+          {
+            "name": "ER-1006-A.MWH",
+            "id": 388,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1006-A.MWH"
+          },
+          {
+            "name": "ER-1015-A.MWH",
+            "id": 389,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1015-A.MWH"
+          },
+          {
+            "name": "ER-1016-A.MWH",
+            "id": 390,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1016-A.MWH"
+          },
+          {
+            "name": "ER-1044-A.MWH",
+            "id": 391,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1044-A.MWH"
+          },
+          {
+            "name": "ER-1046-A.MWH",
+            "id": 392,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1046-A.MWH"
+          },
+          {
+            "name": "ER-1047-A.MWH",
+            "id": 393,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1047-A.MWH"
+          },
+          {
+            "name": "ER-1048-A.MWH",
+            "id": 394,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1048-A.MWH"
+          },
+          {
+            "name": "ER-1049-A.MWH",
+            "id": 395,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1049-A.MWH"
+          },
+          {
+            "name": "ER-1074-A.MWH",
+            "id": 396,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1074-A.MWH"
+          },
+          {
+            "name": "ER-1075-A.MWH",
+            "id": 397,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1075-A.MWH"
+          },
+          {
+            "name": "ER-1085-A.MWH",
+            "id": 398,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1085-A.MWH"
+          },
+          {
+            "name": "ER-1087-A.MWH",
+            "id": 399,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1087-A.MWH"
+          },
+          {
+            "name": "ER-1104-A.MWH",
+            "id": 400,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1104-A.MWH"
+          },
+          {
+            "name": "ER-1146-A.MWH",
+            "id": 401,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1146-A.MWH"
+          },
+          {
+            "name": "ER-1290-A.MWH",
+            "id": 402,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1290-A.MWH"
+          },
+          {
+            "name": "ER-1312-A.MWH",
+            "id": 403,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1312-A.MWH"
+          },
+          {
+            "name": "ER-1313-A.MWH",
+            "id": 404,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1313-A.MWH"
+          },
+          {
+            "name": "ER-1339-A.MWH",
+            "id": 405,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1339-A.MWH"
+          },
+          {
+            "name": "ER-1353-A.MWH",
+            "id": 406,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1353-A.MWH"
+          },
+          {
+            "name": "ER-1354-A.MWH",
+            "id": 407,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1354-A.MWH"
+          },
+          {
+            "name": "ER-1357-A.MWH",
+            "id": 408,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1357-A.MWH"
+          },
+          {
+            "name": "ER-1463-A.MWH",
+            "id": 409,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1463-A.MWH"
+          },
+          {
+            "name": "ER-1465-A.MWH",
+            "id": 410,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1465-A.MWH"
+          },
+          {
+            "name": "ER-1467-A.MWH",
+            "id": 411,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1467-A.MWH"
+          },
+          {
+            "name": "ER-1469-A.MWH",
+            "id": 412,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1469-A.MWH"
+          },
+          {
+            "name": "ER-1473-A.MWH",
+            "id": 413,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1473-A.MWH"
+          },
+          {
+            "name": "ER-1474-A.MWH",
+            "id": 414,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1474-A.MWH"
+          },
+          {
+            "name": "ER-1475-A.MWH",
+            "id": 415,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1475-A.MWH"
+          },
+          {
+            "name": "ER-1476-A.MWH",
+            "id": 416,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1476-A.MWH"
+          },
+          {
+            "name": "ER-1492-A.MWH",
+            "id": 417,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1492-A.MWH"
+          },
+          {
+            "name": "ER-1494-A.MWH",
+            "id": 418,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1494-A.MWH"
+          },
+          {
+            "name": "ER-1498-A.MWH",
+            "id": 419,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1498-A.MWH"
+          },
+          {
+            "name": "ER-1554-A.MWH",
+            "id": 420,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1554-A.MWH"
+          },
+          {
+            "name": "ER-1743-A.MWH",
+            "id": 421,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1743-A.MWH"
+          },
+          {
+            "name": "ER-1764-A.MWH",
+            "id": 422,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1764-A.MWH"
+          },
+          {
+            "name": "ER-1765-A.MWH",
+            "id": 423,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\ER-1765-A.MWH"
+          },
+          {
+            "name": "NP-5942-A.MWH",
+            "id": 424,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-5942-A.MWH"
+          },
+          {
+            "name": "NP-6051-A.MWH",
+            "id": 425,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-6051-A.MWH"
+          },
+          {
+            "name": "NP-6054-A.MWH",
+            "id": 426,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-6054-A.MWH"
+          },
+          {
+            "name": "NP-6056-A.MWH",
+            "id": 427,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-6056-A.MWH"
+          },
+          {
+            "name": "NP-6057-A.MWH",
+            "id": 428,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-6057-A.MWH"
+          },
+          {
+            "name": "NP-6059-A.MWH",
+            "id": 429,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-6059-A.MWH"
+          },
+          {
+            "name": "NP-7425-A.MWH",
+            "id": 430,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7425-A.MWH"
+          },
+          {
+            "name": "NP-7629-A.MWH",
+            "id": 431,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7629-A.MWH"
+          },
+          {
+            "name": "NP-7836-A.MWH",
+            "id": 432,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7836-A.MWH"
+          },
+          {
+            "name": "NP-7910-A.MWH",
+            "id": 433,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7910-A.MWH"
+          },
+          {
+            "name": "NP-7947-A.MWH",
+            "id": 434,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7947-A.MWH"
+          },
+          {
+            "name": "NP-7949-A.MWH",
+            "id": 435,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7949-A.MWH"
+          },
+          {
+            "name": "NP-7988-A.MWH",
+            "id": 436,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-7988-A.MWH"
+          },
+          {
+            "name": "NP-8642-A.MWH",
+            "id": 437,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8642-A.MWH"
+          },
+          {
+            "name": "NP-8643-A.MWH",
+            "id": 438,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8643-A.MWH"
+          },
+          {
+            "name": "NP-8742-A.MWH",
+            "id": 439,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8742-A.MWH"
+          },
+          {
+            "name": "NP-8743-A.MWH",
+            "id": 440,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8743-A.MWH"
+          },
+          {
+            "name": "NP-8777-A.MWH",
+            "id": 441,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8777-A.MWH"
+          },
+          {
+            "name": "NP-8778-A.MWH",
+            "id": 442,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8778-A.MWH"
+          },
+          {
+            "name": "NP-8779-A.MWH",
+            "id": 443,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8779-A.MWH"
+          },
+          {
+            "name": "NP-8780-A.MWH",
+            "id": 444,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8780-A.MWH"
+          },
+          {
+            "name": "NP-8781-A.MWH",
+            "id": 445,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8781-A.MWH"
+          },
+          {
+            "name": "NP-8785-A.MWH",
+            "id": 446,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8785-A.MWH"
+          },
+          {
+            "name": "NP-8786-A.MWH",
+            "id": 447,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8786-A.MWH"
+          },
+          {
+            "name": "NP-8788-A.MWH",
+            "id": 448,
+            "type": "file",
+            "path": "meterFile\\meterFile1\\Real Meter MWH Files\\13-12-20\\NP-8788-A.MWH"
+          }
+        ]
+      }
+    ]
+  }
+])
