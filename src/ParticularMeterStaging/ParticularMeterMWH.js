@@ -1,41 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   Redirect,
-//   useRouteMatch,
-//   useParams,
-// } from "react-router-dom";
-// import "../cssFiles/Grid.css";
-// import "primeflex/primeflex.css";
-// import { Fieldset } from "primereact/fieldset";
-// import { Button } from "primereact/button";
-// import axios from "axios";
-// import FolderStructure from "../FolderStructure";
-
-// export default function ParticularMeter(props) {
-//   let { meterIdParam } = useParams();
-
-//   useEffect(() => {
-//     fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
-//       .then((res) => res.json())
-//       .then((result) => {
-//         // setMeter(result[0]);
-//         console.log(result);
-//       });
-//   }, []);
-
-//   return (
-//     <div className="p-col">
-//       <Fieldset legend="MWH Files" toggleable>
-//         Not processed yet
-//       </Fieldset>
-//     </div>
-//   );
-// }
-
 import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -53,58 +15,98 @@ import { Button } from "primereact/button";
 import axios from "axios";
 import FolderStructure from "../FolderStructure";
 import { ProgressBar } from "primereact/progressbar";
+import { SelectButton } from "primereact/selectbutton";
 
-export default function ParticularMeterExtract(props) {
-  let emptyMeter = {
-    model: "fifteenmmdp.allmeterfiles",
-    pk: null,
-    fields: {
-      year: "",
-      month: "",
-      zippedMeterFile: null,
-      dirStructure: null,
-      status: null,
-      dirStructureRealMWH: null,
-      dirStructureFictMWH: null,
-      dirStructureFinalOutput: null,
-    },
-  };
+export default function ParticularMeterMWH(props) {
+  // let emptyRealMeterMWH = {
+  //   model: "fifteenmmdp.realmetermwh",
+  //   pk: null,
+  //   fields: {
+  //     meterFile: null,
+  //     dirStructureMWH: null,
+  //   },
+  // };
   //   const location = useLocation();
   let { meterIdParam } = useParams();
-  let match = useRouteMatch();
+  // let match = useRouteMatch();
 
-  const [meter, setMeter] = useState(emptyMeter);
+  // const [realMeterMWHData, setRealMeterMWHData] = useState(emptyRealMeterMWH);
+  const [meterFileId, setMeterFileId] = useState(null);
+
+  const [date, setDate] = useState(null);
+  const [dateWiseMWHDir, setdateWiseMWHDir] = useState({});
+  const [dates, setDates] = useState([]);
+  const [sendDir, setSendDir] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+    fetch(
+      "http://127.0.0.1:8000/fifteenmmdp/getRealMeterMWHData/" + meterIdParam
+    )
       .then((res) => res.json())
       .then((result) => {
-        setMeter(result[0]);
+        if (result.length > 0) {
+          setMeterFileId(result[0].fields.meterFile);
+          let _dateWiseMWHDir = {};
+          let _dates = [];
+
+          let dirJson = JSON.parse(result[0].fields.dirStructureRealMWH);
+          dirJson.files.forEach((element) => {
+            _dates.push(element.name);
+            _dateWiseMWHDir[element.name] = element;
+          });
+          if (_dates.length > 0) {
+            console.log("hii");
+            setDates(_dates);
+            setDate(_dates[0]);
+            setdateWiseMWHDir(_dateWiseMWHDir);
+            setSendDir(_dateWiseMWHDir[_dates[0]]);
+            console.log(_dateWiseMWHDir);
+          }
+        }
         console.log(result);
       });
+    // .catch((error) => {
+    //   console.log("Some server side error");
+    // });
   }, []);
 
   return (
     <>
       <div className="p-col">
-        {/* <Fieldset legend="Real Meter MWH Files" toggleable> */}
-        {props.progressbarVisible ? (
-          <>
-            <h5>Processing</h5>
-            <ProgressBar
-              mode="indeterminate"
-              style={{ height: "6px" }}
-            ></ProgressBar>
-          </>
-        ) : meter.fields.dirStructureRealMWH ? (
-          <FolderStructure
-            dir={meter.fields.dirStructureRealMWH}
-            fileType="RealMeterMWHFiles"
-          />
-        ) : (
-          "Real Meter MWH Files not created yet"
-        )}
-        {/* </Fieldset> */}
+        <Fieldset legend="Real Meter MWH Files" toggleable>
+          {props.progressbarVisible ? (
+            <>
+              <h5>Processing</h5>
+              <ProgressBar
+                mode="indeterminate"
+                style={{ height: "6px" }}
+              ></ProgressBar>
+            </>
+          ) : dates.length ? (
+            <div>
+              <SelectButton
+                value={date}
+                options={dates}
+                onChange={(e) => {
+                  console.log(e.value);
+                  setDate(e.value);
+                  setSendDir(dateWiseMWHDir[e.value]);
+                }}
+              />{" "}
+              {date && sendDir ? (
+                <FolderStructure
+                  dir={sendDir}
+                  fileType="RealMeterMWHFiles"
+                  meterId={meterFileId}
+                />
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            "Real Meter MWH Files not created yet"
+          )}
+        </Fieldset>
       </div>
       <div className="p-col">
         <Fieldset legend="Error during Real Meter MWH Creation" toggleable>

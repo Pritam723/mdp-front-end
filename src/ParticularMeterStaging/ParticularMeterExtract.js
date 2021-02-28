@@ -17,32 +17,31 @@ import FolderStructure from "../FolderStructure";
 import { ProgressBar } from "primereact/progressbar";
 
 export default function ParticularMeterExtract(props) {
-  let emptyMeter = {
-    model: "fifteenmmdp.allmeterfiles",
+  let emptyNPC = {
+    model: "fifteenmmdp.npcfile",
     pk: null,
     fields: {
-      year: "",
-      month: "",
-      zippedMeterFile: null,
-      dirStructure: null,
-      status: null,
-      dirStructureRealMWH: null,
-      dirStructureFictMWH: null,
-      dirStructureFinalOutput: null,
+      meterFile: null,
+      dirStructureNPC: null,
     },
   };
   //   const location = useLocation();
   let { meterIdParam } = useParams();
   let match = useRouteMatch();
 
-  const [meter, setMeter] = useState(emptyMeter);
+  const [npcData, setNpcData] = useState(emptyNPC);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+    fetch("http://127.0.0.1:8000/fifteenmmdp/getNPCData/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
-        setMeter(result[0]);
+        if (result.length > 0) {
+          setNpcData(result[0]);
+        }
         console.log(result);
+      })
+      .catch((error) => {
+        console.log("Some server side error");
       });
   }, []);
 
@@ -58,10 +57,11 @@ export default function ParticularMeterExtract(props) {
                 style={{ height: "6px" }}
               ></ProgressBar>
             </>
-          ) : meter.fields.dirStructure ? (
+          ) : npcData.fields.dirStructureNPC ? (
             <FolderStructure
-              dir={meter.fields.dirStructure}
+              dir={JSON.parse(npcData.fields.dirStructureNPC)}
               fileType="NPCFiles"
+              meterId={npcData.fields.meterFile}
             />
           ) : (
             "Meter File not extracted yet"
