@@ -14,24 +14,125 @@ import { Fieldset } from "primereact/fieldset";
 import { Button } from "primereact/button";
 import axios from "axios";
 import FolderStructure from "../FolderStructure";
+import { ProgressBar } from "primereact/progressbar";
+import { SelectButton } from "primereact/selectbutton";
 
-export default function ParticularMeter(props) {
+export default function ParticularMeterMWH(props) {
+  // let emptyRealMeterMWH = {
+  //   model: "fifteenmmdp.realmetermwh",
+  //   pk: null,
+  //   fields: {
+  //     meterFile: null,
+  //     dirStructureMWH: null,
+  //   },
+  // };
+  //   const location = useLocation();
   let { meterIdParam } = useParams();
+  // let match = useRouteMatch();
+
+  // const [realMeterMWHData, setRealMeterMWHData] = useState(emptyRealMeterMWH);
+  const [meterFileId, setMeterFileId] = useState(null);
+
+  const [date, setDate] = useState(null);
+  const [dateWiseMWHDir, setdateWiseMWHDir] = useState({});
+  const [dates, setDates] = useState([]);
+  const [sendDir, setSendDir] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+    fetch(
+      "http://127.0.0.1:8000/fifteenmmdp/getFictMeterMWHData/" + meterIdParam
+    )
       .then((res) => res.json())
       .then((result) => {
-        // setMeter(result[0]);
+        if (result.length > 0) {
+          setMeterFileId(result[0].fields.meterFile);
+          let _dateWiseMWHDir = {};
+          let _dates = [];
+
+          let dirJson = JSON.parse(result[0].fields.dirStructureFictMWH);
+          dirJson.files.forEach((element) => {
+            _dates.push(element.name);
+            _dateWiseMWHDir[element.name] = element;
+          });
+          if (_dates.length > 0) {
+            console.log("hii");
+            setDates(_dates);
+            setDate(_dates[0]);
+            setdateWiseMWHDir(_dateWiseMWHDir);
+            setSendDir(_dateWiseMWHDir[_dates[0]]);
+            console.log(_dateWiseMWHDir);
+          }
+        }
         console.log(result);
       });
+    // .catch((error) => {
+    //   console.log("Some server side error");
+    // });
   }, []);
 
   return (
-    <div className="p-col">
-      <Fieldset legend="Fictitious Meter MWH" toggleable>
-        Not processed yet
-      </Fieldset>
-    </div>
+    <>
+      <div className="p-col">
+        <Fieldset legend="Fictitious Meter MWH Files" toggleable>
+          {props.progressbarVisible ? (
+            <>
+              <h5>Processing</h5>
+              <ProgressBar
+                mode="indeterminate"
+                style={{ height: "6px" }}
+              ></ProgressBar>
+            </>
+          ) : dates.length ? (
+            <div className="p-grid">
+              <div className="p-col">
+                <SelectButton
+                  value={date}
+                  options={dates}
+                  onChange={(e) => {
+                    console.log(e.value);
+                    setDate(e.value);
+                    setSendDir(dateWiseMWHDir[e.value]);
+                  }}
+                />{" "}
+                {date && sendDir ? (
+                  <FolderStructure
+                    dir={sendDir}
+                    fileType="FictMeterMWHFiles"
+                    meterId={meterFileId}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
+              <div className="p-col">
+                <a
+                  href={
+                    "http://127.0.0.1:8000/fifteenmmdp/downLoadFullFictMeterMWHFiles/" +
+                    meterIdParam
+                  }
+                >
+                  <Button
+                    icon="pi pi-download"
+                    className="p-button-rounded p-button-help"
+                    // onClick={downLoadFullRealMeterMWHFiles}
+                  />
+                </a>
+                {"  "}Download Files
+              </div>
+            </div>
+          ) : (
+            "Fictitious Meter MWH Files not created yet"
+          )}
+        </Fieldset>
+      </div>
+      <div className="p-col">
+        <Fieldset
+          legend="Error during Fictitious Meter MWH Creation"
+          toggleable
+        >
+          {props.ErrorMessage}
+        </Fieldset>
+      </div>
+    </>
   );
 }

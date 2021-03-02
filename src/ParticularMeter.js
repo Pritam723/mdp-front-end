@@ -220,7 +220,16 @@ export default function ParticularMeter(props) {
           <Toast ref={toast}></Toast>
 
           <div className="card">
-            <h5>Working with the uploaded Meter File</h5>
+            <div className="p-grid">
+              <div className="p-col">
+                <h5>Working with the uploaded Meter File</h5>
+              </div>
+              <div className="p-col">
+                <h5>
+                  <a href="/">Jump to home</a>
+                </h5>
+              </div>
+            </div>
             <Steps
               model={items}
               activeIndex={activeIndex}
