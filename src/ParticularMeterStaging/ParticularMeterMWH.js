@@ -38,6 +38,12 @@ export default function ParticularMeterMWH(props) {
   const [dates, setDates] = useState([]);
   const [sendDir, setSendDir] = useState(null);
 
+  // const downLoadFullRealMeterMWHFiles = () => {
+  //   "http://127.0.0.1:8000/fifteenmmdp/downloadRealMeterMWHFile/8/7"
+
+  //   console.log("jajaja");
+  // };
+
   useEffect(() => {
     fetch(
       "http://127.0.0.1:8000/fifteenmmdp/getRealMeterMWHData/" + meterIdParam
@@ -83,25 +89,42 @@ export default function ParticularMeterMWH(props) {
               ></ProgressBar>
             </>
           ) : dates.length ? (
-            <div>
-              <SelectButton
-                value={date}
-                options={dates}
-                onChange={(e) => {
-                  console.log(e.value);
-                  setDate(e.value);
-                  setSendDir(dateWiseMWHDir[e.value]);
-                }}
-              />{" "}
-              {date && sendDir ? (
-                <FolderStructure
-                  dir={sendDir}
-                  fileType="RealMeterMWHFiles"
-                  meterId={meterFileId}
-                />
-              ) : (
-                <></>
-              )}
+            <div className="p-grid">
+              <div className="p-col">
+                <SelectButton
+                  value={date}
+                  options={dates}
+                  onChange={(e) => {
+                    console.log(e.value);
+                    setDate(e.value);
+                    setSendDir(dateWiseMWHDir[e.value]);
+                  }}
+                />{" "}
+                {date && sendDir ? (
+                  <FolderStructure
+                    dir={sendDir}
+                    fileType="RealMeterMWHFiles"
+                    meterId={meterFileId}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>{" "}
+              <div className="p-col">
+                <a
+                  href={
+                    "http://127.0.0.1:8000/fifteenmmdp/downLoadFullRealMeterMWHFiles/" +
+                    meterIdParam
+                  }
+                >
+                  <Button
+                    icon="pi pi-download"
+                    className="p-button-rounded p-button-help"
+                    // onClick={downLoadFullRealMeterMWHFiles}
+                  />
+                </a>
+                {"  "}Download Files
+              </div>
             </div>
           ) : (
             "Real Meter MWH Files not created yet"

@@ -20,6 +20,11 @@ export default function FolderStructure(props) {
       _changeMethod: "changeRealMeterMWHFile",
       _downloadMethod: "downloadRealMeterMWHFile",
     },
+    FictMeterMWHFiles: {
+      _fileName: "Fictitious Meter MWH Files",
+      _changeMethod: "changeFictMeterMWHFile",
+      _downloadMethod: "downloadFictMeterMWHFile",
+    },
   };
 
   // const [data, setData] = useState([JSON.parse(props.dir)]);
