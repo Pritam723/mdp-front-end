@@ -16,6 +16,7 @@ import axios from "axios";
 import { ProgressBar } from "primereact/progressbar";
 import { Sidebar } from "primereact/sidebar";
 import { Toast } from "primereact/toast";
+import proxyServer from "../GlobalVars";
 
 export default function ParticularMeter(props) {
   let { meterIdParam } = useParams();
@@ -49,7 +50,7 @@ export default function ParticularMeter(props) {
     );
   };
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getValidatedFile/" + meterIdParam)
+    fetch("/fifteenmmdp/getValidatedFile/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         if (result.length == 1) {
@@ -67,10 +68,7 @@ export default function ParticularMeter(props) {
       uploadData.append("fileToUpload", fileToUpload, fileToUpload.name);
       console.log(uploadData);
       axios
-        .post(
-          "http://127.0.0.1:8000/fifteenmmdp/changeValidatedFile/" + nodeId,
-          uploadData
-        )
+        .post("/fifteenmmdp/changeValidatedFile/" + nodeId, uploadData)
         .then((response) => {
           console.log(response);
           window.location.reload();
@@ -105,14 +103,8 @@ export default function ParticularMeter(props) {
           Change Validated File
           <br />
           <a
-            href={
-              "http://127.0.0.1:8000/fifteenmmdp/downloadValidatedFile/" +
-              nodeId
-            }
-            download={
-              "http://127.0.0.1:8000/fifteenmmdp/downloadValidatedFile/" +
-              nodeId
-            }
+            href={proxyServer + "/fifteenmmdp/downloadValidatedFile/" + nodeId}
+            download={"/fifteenmmdp/downloadValidatedFile/" + nodeId}
           >
             {" "}
             {nodeName}{" "}

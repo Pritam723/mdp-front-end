@@ -17,6 +17,7 @@ import FolderStructure from "../FolderStructure";
 import { ProgressBar } from "primereact/progressbar";
 import { Sidebar } from "primereact/sidebar";
 import { Toast } from "primereact/toast";
+import proxyServer from "../GlobalVars";
 
 export default function ParticularMeter(props) {
   let { meterIdParam } = useParams();
@@ -46,20 +47,14 @@ export default function ParticularMeter(props) {
           label={dateFilteredFile.fields.fileName}
           className="p-button-link"
         />{" "}
-        <a
-          href={
-            "http://127.0.0.1:8000/fifteenmmdp/downloadNrxFile/" + meterIdParam
-          }
-        >
+        <a href={proxyServer + "/fifteenmmdp/downloadNrxFile/" + meterIdParam}>
           <Button label="NRX File" className="p-button-link" />
         </a>
       </div>
     );
   };
   useEffect(() => {
-    fetch(
-      "http://127.0.0.1:8000/fifteenmmdp/getDateFilteredFile/" + meterIdParam
-    )
+    fetch("/fifteenmmdp/getDateFilteredFile/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         if (result.length == 1) {
@@ -77,10 +72,7 @@ export default function ParticularMeter(props) {
       uploadData.append("fileToUpload", fileToUpload, fileToUpload.name);
       console.log(uploadData);
       axios
-        .post(
-          "http://127.0.0.1:8000/fifteenmmdp/changeDateFilteredFile/" + nodeId,
-          uploadData
-        )
+        .post("/fifteenmmdp/changeDateFilteredFile/" + nodeId, uploadData)
         .then((response) => {
           console.log(response);
           window.location.reload();
@@ -116,13 +108,9 @@ export default function ParticularMeter(props) {
           <br />
           <a
             href={
-              "http://127.0.0.1:8000/fifteenmmdp/downloadDateFilteredFile/" +
-              nodeId
+              proxyServer + "/fifteenmmdp/downloadDateFilteredFile/" + nodeId
             }
-            download={
-              "http://127.0.0.1:8000/fifteenmmdp/downloadDateFilteredFile/" +
-              nodeId
-            }
+            download={"/fifteenmmdp/downloadDateFilteredFile/" + nodeId}
           >
             {" "}
             {nodeName}{" "}

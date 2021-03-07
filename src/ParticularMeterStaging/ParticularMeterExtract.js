@@ -32,7 +32,7 @@ export default function ParticularMeterExtract(props) {
   const [npcData, setNpcData] = useState(emptyNPC);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getNPCData/" + meterIdParam)
+    fetch("/fifteenmmdp/getNPCData/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         if (result.length > 0) {

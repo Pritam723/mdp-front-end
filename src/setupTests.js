@@ -32,9 +32,7 @@ export default function ParticularMeterMWH(props) {
   const [realMeterMWHData, setRealMeterMWHData] = useState(emptyRealMeterMWH);
 
   useEffect(() => {
-    fetch(
-      "http://127.0.0.1:8000/fifteenmmdp/getRealMeterMWHData/" + meterIdParam
-    )
+    fetch("/fifteenmmdp/getRealMeterMWHData/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         if (result.length > 0) {

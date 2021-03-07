@@ -19,7 +19,7 @@ export default function ParticularMeter(props) {
   let { meterIdParam } = useParams();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+    fetch("/fifteenmmdp/getMeterData/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         // setMeter(result[0]);

@@ -6,6 +6,7 @@ import { Sidebar } from "primereact/sidebar";
 import { Button } from "primereact/button";
 import SidebarActions from "./SidebarActions";
 import axios from "axios";
+import proxyServer from "./GlobalVars";
 
 export default function FolderStructure(props) {
   // Just add objects to this
@@ -24,6 +25,11 @@ export default function FolderStructure(props) {
       _fileName: "Fictitious Meter MWH Files",
       _changeMethod: "changeFictMeterMWHFile",
       _downloadMethod: "downloadFictMeterMWHFile",
+    },
+    FinalOutputFiles: {
+      _fileName: "Final Output Files",
+      _changeMethod: "changeFinalOutputFile",
+      _downloadMethod: "downloadFinalOutputFile",
     },
   };
 
@@ -73,12 +79,7 @@ export default function FolderStructure(props) {
       console.log(uploadData);
       axios
         .post(
-          "http://127.0.0.1:8000/fifteenmmdp/" +
-            changeMethod +
-            "/" +
-            props.meterId +
-            "/" +
-            nodeId,
+          "/fifteenmmdp/" + changeMethod + "/" + props.meterId + "/" + nodeId,
           uploadData
         )
         .then((response) => {
@@ -147,7 +148,8 @@ export default function FolderStructure(props) {
           <br />
           <a
             href={
-              "http://127.0.0.1:8000/fifteenmmdp/" +
+              proxyServer +
+              "/fifteenmmdp/" +
               downloadMethod +
               "/" +
               props.meterId +
@@ -155,7 +157,7 @@ export default function FolderStructure(props) {
               nodeId
             }
             download={
-              "http://127.0.0.1:8000/fifteenmmdp/" +
+              "/fifteenmmdp/" +
               downloadMethod +
               props.meterId +
               "/" +
