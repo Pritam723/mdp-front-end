@@ -30,6 +30,7 @@ import { Steps } from "primereact/steps";
 import { Toast } from "primereact/toast";
 import "./cssFiles/StepsDemo.css";
 import { useHistory } from "react-router-dom";
+import proxyServer from "./GlobalVars";
 
 export default function ParticularMeter(props) {
   let emptyMeter = {
@@ -156,7 +157,7 @@ export default function ParticularMeter(props) {
   const toast = useRef(null);
   useEffect(() => {
     console.log(meterIdParam);
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getMeterData/" + meterIdParam)
+    fetch("/fifteenmmdp/getMeterData/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         setMeter(result[0]);
@@ -172,9 +173,7 @@ export default function ParticularMeter(props) {
     console.log("already called");
     setProgressbarVisible(true);
     axios
-      .post(
-        "http://127.0.0.1:8000/fifteenmmdp/" + process[activeIndex] + "/" + id
-      )
+      .post("/fifteenmmdp/" + process[activeIndex] + "/" + id)
       .then((response) => {
         // console.log(response);
         setProgressbarVisible(false);
@@ -255,12 +254,12 @@ export default function ParticularMeter(props) {
                 <h5>File</h5>
                 <a
                   href={
-                    "http://127.0.0.1:8000/fifteenmmdp/media/" +
+                    proxyServer +
+                    "/fifteenmmdp/media/" +
                     meter.fields.zippedMeterFile
                   }
                   download={
-                    "http://127.0.0.1:8000/fifteenmmdp/media/" +
-                    meter.fields.zippedMeterFile
+                    "/fifteenmmdp/media/" + meter.fields.zippedMeterFile
                   }
                 >
                   {meter.fields.zippedMeterFile

@@ -31,7 +31,7 @@ export default function FormLayoutDemo() {
     uploadData.append("meterZippedFile", meterZippedFile, meterZippedFile.name);
     // var csrftoken = getCookie("csrftoken");
     console.log(uploadData);
-    // fetch("http://127.0.0.1:8000/fifteenmmdp/addNewMeterFile/", {
+    // fetch("/fifteenmmdp/addNewMeterFile/", {
     //   method: "POST",
     //   body: uploadData,
     // })

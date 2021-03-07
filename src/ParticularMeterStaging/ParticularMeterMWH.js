@@ -16,6 +16,7 @@ import axios from "axios";
 import FolderStructure from "../FolderStructure";
 import { ProgressBar } from "primereact/progressbar";
 import { SelectButton } from "primereact/selectbutton";
+import proxyServer from "../GlobalVars";
 
 export default function ParticularMeterMWH(props) {
   // let emptyRealMeterMWH = {
@@ -39,15 +40,13 @@ export default function ParticularMeterMWH(props) {
   const [sendDir, setSendDir] = useState(null);
 
   // const downLoadFullRealMeterMWHFiles = () => {
-  //   "http://127.0.0.1:8000/fifteenmmdp/downloadRealMeterMWHFile/8/7"
+  //   "/fifteenmmdp/downloadRealMeterMWHFile/8/7"
 
   //   console.log("jajaja");
   // };
 
   useEffect(() => {
-    fetch(
-      "http://127.0.0.1:8000/fifteenmmdp/getRealMeterMWHData/" + meterIdParam
-    )
+    fetch("/fifteenmmdp/getRealMeterMWHData/" + meterIdParam)
       .then((res) => res.json())
       .then((result) => {
         if (result.length > 0) {
@@ -113,7 +112,8 @@ export default function ParticularMeterMWH(props) {
               <div className="p-col">
                 <a
                   href={
-                    "http://127.0.0.1:8000/fifteenmmdp/downLoadFullRealMeterMWHFiles/" +
+                    proxyServer +
+                    "/fifteenmmdp/downLoadFullRealMeterMWHFiles/" +
                     meterIdParam
                   }
                 >

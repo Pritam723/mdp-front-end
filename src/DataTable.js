@@ -27,7 +27,7 @@ import { Calendar } from "primereact/calendar";
 import "primeflex/primeflex.css";
 import moment from "moment";
 // import "./DataTableDemo.css";
-
+import proxyServer from "./GlobalVars";
 export default function DataTableCrudDemo() {
   let emptyMeter = {
     model: "fifteenmmdp.allmeterfiles",
@@ -56,7 +56,7 @@ export default function DataTableCrudDemo() {
   let history = useHistory();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/getAllMeterData/")
+    fetch("/fifteenmmdp/getAllMeterData")
       .then((res) => res.json())
       .then((result) => {
         setMeters(result);
@@ -106,13 +106,9 @@ export default function DataTableCrudDemo() {
       <>
         <a
           href={
-            "http://127.0.0.1:8000/fifteenmmdp/media/" +
-            rowData.fields.zippedMeterFile
+            proxyServer + "/fifteenmmdp/media/" + rowData.fields.zippedMeterFile
           }
-          download={
-            "http://127.0.0.1:8000/fifteenmmdp/media/" +
-            rowData.fields.zippedMeterFile
-          }
+          download={"/fifteenmmdp/media/" + rowData.fields.zippedMeterFile}
         >
           {rowData.fields.zippedMeterFile
             ? rowData.fields.zippedMeterFile.split("/").slice(-1).pop()
@@ -174,7 +170,7 @@ export default function DataTableCrudDemo() {
       }
 
       axios
-        .post("http://127.0.0.1:8000/fifteenmmdp/addNewMeterFile/", uploadData)
+        .post("/fifteenmmdp/addNewMeterFile/", uploadData)
         .then((response) => {
           window.location.reload();
         })
@@ -208,7 +204,7 @@ export default function DataTableCrudDemo() {
   };
 
   const deleteProduct = () => {
-    fetch("http://127.0.0.1:8000/fifteenmmdp/deleteNewMeterFile/" + meter.pk)
+    fetch("/fifteenmmdp/deleteNewMeterFile/" + meter.pk)
       .then((res) => {
         console.log(res);
         let _meters = meters.filter((val) => val.pk !== meter.pk);
