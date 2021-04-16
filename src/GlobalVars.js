@@ -1,5 +1,5 @@
 // let proxyServer = "http://10.3.101.238:8000";
-let proxyServer = "http://localhost:8000";
+let proxyServer = "http://10.3.101.238:8000";
 
 export default proxyServer;
 
@@ -51,8 +51,8 @@ export default proxyServer;
 //     #   },
 //     #   {
 //     #     "fileId": 2,
-//     #     "fileName": "FICTMTRS.DAT",
-//     #     "path": "necessaryFiles\\FICTMTRS.DAT",
+//     #     "fileName": "FICTMTRS.dat",
+//     #     "path": "necessaryFiles\\FICTMTRS.dat",
 //     #     "subTitle": "Details of Fictitious meters",
 //     #     "description": "test2",
 //     #   },
