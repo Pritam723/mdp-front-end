@@ -25,6 +25,7 @@ import ParticularMeterMWH from "./ParticularMeterStaging/ParticularMeterMWH";
 import ParticularMeterFict from "./ParticularMeterStaging/ParticularMeterFict";
 import ParticularMeterFinalOutput from "./ParticularMeterStaging/ParticularMeterFinalOutput";
 import ParticularMeterAnalyse from "./ParticularMeterStaging/ParticularMeterAnalyse";
+import ParticularMeterSpecialReport from "./ParticularMeterStaging/ParticularMeterSpecialReport";
 
 import { Steps } from "primereact/steps";
 import { Toast } from "primereact/toast";
@@ -73,6 +74,11 @@ export default function ParticularMeter(props) {
       _href: "analyseData",
       _index: 7,
       _processStage: "Analyse",
+    },
+    AnalyseDone: {
+      _href: "specialReports",
+      _index: 8,
+      _processStage: "Special Reports",
     },
   };
   const items = [
@@ -132,6 +138,13 @@ export default function ParticularMeter(props) {
         setProcessStage("Analyse");
       },
     },
+    {
+      label: "Special Reports",
+      command: (event) => {
+        history.push(`${match.url}/specialReports`);
+        setProcessStage("Special Reports");
+      },
+    },
   ];
   const process = [
     "extract",
@@ -142,6 +155,7 @@ export default function ParticularMeter(props) {
     "fictMeterMWH",
     "finalOutput",
     "analyseData",
+    "specialReports",
   ];
   //   const location = useLocation();
   let { meterIdParam } = useParams();
@@ -333,6 +347,13 @@ export default function ParticularMeter(props) {
           <Route path={`${match.path}/analyseData`}>
             {" "}
             <ParticularMeterAnalyse
+              progressbarVisible={progressbarVisible}
+              ErrorMessage={errorMsg}
+            />
+          </Route>
+          <Route path={`${match.path}/specialReports`}>
+            {" "}
+            <ParticularMeterSpecialReport
               progressbarVisible={progressbarVisible}
               ErrorMessage={errorMsg}
             />
