@@ -1,37 +1,63 @@
 import React, { useState } from "react";
-import { Calendar } from "primereact/calendar";
-import "primeflex/primeflex.css";
+import { Dialog } from "primereact/dialog";
+import { Button } from "primereact/button";
+import "./cssFiles/DialogDemo.css";
 
-export default function CalendarDemo() {
-  const [date, setDate] = useState(null);
-  const [date10, setDate10] = useState(null);
+export default function DialogDemo() {
+  const [displayResponsive, setDisplayResponsive] = useState(false);
+
+  const dialogFuncMap = {
+    displayResponsive: setDisplayResponsive,
+  };
+
+  const onClick = (name, position) => {
+    dialogFuncMap[`${name}`](true);
+  };
+
+  const onHide = (name) => {
+    dialogFuncMap[`${name}`](false);
+  };
+
+  const renderFooter = (name) => {
+    return (
+      <div>
+        <Button
+          label="Close"
+          icon="pi pi-times"
+          onClick={() => onHide(name)}
+          className="p-button-text"
+        />
+      </div>
+    );
+  };
 
   return (
-    <div>
-      <div className="p-field p-col-12 p-md-4">
-        <label htmlFor="monthpicker">Month Picker</label>
-        <Calendar
-          id="monthpicker"
-          value={date}
-          onChange={(e) => {
-            setDate(e.value);
-            console.log(e.value);
-          }}
-          view="month"
-          dateFormat="MM"
+    <div className="dialog-demo">
+      <div className="card">
+        <h5>Responsive</h5>
+        <Button
+          label="Show"
+          icon="pi pi-external-link"
+          onClick={() => onClick("displayResponsive")}
         />
-      </div>{" "}
-      <div className="p-field p-col-12 p-md-4">
-        <label htmlFor="monthpicker">Month Picker</label>
-        <Calendar
-          id="monthpicker"
-          value={date10}
-          onChange={(e) => setDate10(e.value)}
-          view="month"
-          dateFormat="yy"
-          yearNavigator
-          yearRange="2010:2030"
-        />
+        <Dialog
+          header="Header"
+          visible={displayResponsive}
+          onHide={() => onHide("displayResponsive")}
+          breakpoints={{ "960px": "75vw" }}
+          style={{ width: "50vw" }}
+          footer={renderFooter("displayResponsive")}
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </Dialog>
       </div>
     </div>
   );
