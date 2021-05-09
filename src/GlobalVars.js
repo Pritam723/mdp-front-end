@@ -1,5 +1,5 @@
 // let proxyServer = "http://10.3.101.238:8000";
-let proxyServer = "http://10.3.101.238:8000";
+let proxyServer = "http://10.3.101.90:8001";
 
 export default proxyServer;
 
