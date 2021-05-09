@@ -17,7 +17,9 @@ import FolderStructure from "../FolderStructure";
 import { ProgressBar } from "primereact/progressbar";
 import { SelectButton } from "primereact/selectbutton";
 import proxyServer from "../GlobalVars";
-
+import { Divider } from "primereact/divider";
+import Plot from "react-plotly.js";
+import FrequencyGraph from "./FrequencyGraph";
 export default function ParticularMeterMWH(props) {
   // let emptyRealMeterMWH = {
   //   model: "fifteenmmdp.realmetermwh",
@@ -33,7 +35,6 @@ export default function ParticularMeterMWH(props) {
 
   // const [realMeterMWHData, setRealMeterMWHData] = useState(emptyRealMeterMWH);
   const [meterFileId, setMeterFileId] = useState(null);
-
   const [date, setDate] = useState(null);
   const [dateWiseMWHDir, setdateWiseMWHDir] = useState({});
   const [dates, setDates] = useState([]);
@@ -125,6 +126,8 @@ export default function ParticularMeterMWH(props) {
                 </a>
                 {"  "}Download Files
               </div>
+              <Divider />
+              <FrequencyGraph meterId={meterIdParam} />
             </div>
           ) : (
             "Real Meter MWH Files not created yet"

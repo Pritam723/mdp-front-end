@@ -139,7 +139,9 @@ export default function ParticularMeter(props) {
       },
     },
     {
-      label: "Special Reports",
+      // label: "Special Reports",
+      label: "Loss Analysis",
+
       command: (event) => {
         history.push(`${match.url}/specialReports`);
         setProcessStage("Special Reports");

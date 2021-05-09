@@ -95,6 +95,11 @@ export default function ParticularMeter(props) {
         { name: "WR", code: "WR" },
       ],
     },
+    {
+      type: "Others",
+      code: "others",
+      name: "Others",
+    },
   ];
   const polarityArray = [
     { name: "Default", multiplier: "def" },

@@ -2,22 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Calendar } from "primereact/calendar";
 import "primeflex/primeflex.css";
 import Plot from "react-plotly.js";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import "../cssFiles/DialogDemo.css";
-import { DiWindows } from "react-icons/di";
 import { Chip } from "primereact/chip";
 import "../cssFiles/ChipDemo.css";
 import { Divider } from "primereact/divider";
+import { InputText } from "primereact/inputtext";
+import "primeflex/primeflex.css";
+import axios from "axios";
 
 export default function CalendarDemo() {
   const [data, setData] = useState(null);
@@ -27,7 +21,7 @@ export default function CalendarDemo() {
   const [selectedXValue, setSelectedXValue] = useState(null);
   const [genVal, setGenVal] = useState(null);
   const [drwVal, setDrwVal] = useState(null);
-
+  const [threshold, setThreshold] = useState(0.5);
   const dialogFuncMap = {
     displayResponsive: setDisplayResponsive,
   };
@@ -117,18 +111,49 @@ export default function CalendarDemo() {
     onClickDot("displayResponsive");
   };
 
-  useEffect(() => {
-    fetch("/fifteenmmdp/specialReports/" + meterIdParam)
-      .then((res) => res.json())
+  // useEffect(() => {
+
+  // }, []);
+
+  const fetchLossData = () => {
+    const uploadData = new FormData();
+    uploadData.append("threshold", threshold);
+
+    axios
+      .post("/fifteenmmdp/specialReports/" + meterIdParam, uploadData)
+      .then((res) => res.data)
       .then((result) => {
         setData(result["dataToSend"]);
         console.log(result);
       });
-  }, []);
+  };
 
   return (
     <>
       <DialogDemo />
+      <div className="p-grid">
+        <div className="p-col"></div>
+
+        <div className="p-col">
+          <label>
+            <b>Set Threshold : </b>
+          </label>{" "}
+          <InputText
+            value={threshold}
+            onChange={(e) => setThreshold(e.target.value)}
+          />
+        </div>
+        <div className="p-col">
+          {" "}
+          <Button
+            label="Fetch Loss Data"
+            className="p-button-rounded p-button-success"
+            onClick={fetchLossData}
+          />{" "}
+        </div>
+        <div className="p-col">Work with Graph</div>
+      </div>
+
       <Plot
         data={data}
         layout={{
