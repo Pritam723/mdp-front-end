@@ -12,7 +12,6 @@ import ParticularMeter from "./ParticularMeter";
 import SidebarActions from "./SidebarActions";
 import { TabMenu } from "primereact/tabmenu";
 import NecessaryFiles from "./NecessaryFiles";
-
 export default function App() {
   let history = useHistory();
   const items = [
@@ -30,6 +29,8 @@ export default function App() {
   return (
     <Router>
       <div>
+        <img src="\fifteenmmdp.png" alt="ERLDC POSOCO" />
+
         <div className="card">
           <TabMenu
             model={items}
@@ -51,6 +52,12 @@ export default function App() {
             <DataTable />
           </Route>
         </Switch>
+        <footer>
+          &copy; Copyright 2020 Meter Department,ERLDC
+          <br />
+          14, Golf Club Rd, Golf Gardens, Tollygunge, Kolkata, West Bengal
+          700033
+        </footer>
       </div>
     </Router>
   );
