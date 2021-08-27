@@ -16,6 +16,7 @@ import { Button } from "primereact/button";
 import axios from "axios";
 import FolderStructure from "./FolderStructure";
 // import SidebarActions from "./SidebarActions";
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 
 import ParticularMeterExtract from "./ParticularMeterStaging/ParticularMeterExtract";
 import ParticularMeterMerge from "./ParticularMeterStaging/ParticularMeterMerge";
@@ -169,6 +170,7 @@ export default function ParticularMeter(props) {
   const [redirectTo, setRedirectTo] = useState(null);
   const [errorMsg, setErrorMsg] = useState(["No Error"]);
   const [progressbarVisible, setProgressbarVisible] = useState(false);
+  const [visibleOverwrite, setVisibleOverwrite] = useState(false);
 
   const toast = useRef(null);
   useEffect(() => {
@@ -185,8 +187,61 @@ export default function ParticularMeter(props) {
       });
   }, []);
 
+// These functions are specially made for realMeterMWH Satge. To give Overwrite option
+  // const processMWHOverWrite = (id,overwriteParam) => {
+  //   if(overwriteParam){
+  //     console.log(id)
+  //     console.log("Overwrite files")
+  //   }else{
+  //     console.log(id)
+  //     console.log("Do not overwrite")
+  //   }
+  // }
+
+
+  const processMWHOverWrite = (id,overwriteParam) => {
+    console.log("already called")
+    setProgressbarVisible(true);
+    axios
+      .post("/fifteenmmdp/realMeterMWH/" + id + "/" + overwriteParam)
+      .then((response) => {
+        // console.log(response);
+        setProgressbarVisible(false);
+
+        window.location.reload();
+      })
+      .catch((error) => {
+        setProgressbarVisible(false);
+
+        console.log(error.response.data);
+        let formattedErrors = [];
+        error.response.data.forEach((error, index) => {
+          formattedErrors.push(
+            <h6 style={{ color: "Tomato" }}>
+              {"(" + (index + 1) + ") " + error}
+              <br />
+            </h6>
+          );
+        });
+        setErrorMsg(formattedErrors);
+        // console.log("dfdf");
+
+        // console.log(error.message);
+      });
+  };
+
+
+
+
   const processMeterData = (id) => {
     console.log("already called");
+
+    if(process[activeIndex] == "realMeterMWH"){
+      // console.log("i work")
+      setVisibleOverwrite(true);
+      return
+    }
+
     setProgressbarVisible(true);
     axios
       .post("/fifteenmmdp/" + process[activeIndex] + "/" + id)
@@ -229,10 +284,16 @@ export default function ParticularMeter(props) {
   }
 
   return (
+ 
     <div className="p-grid p-dir-col">
       <div className="p-col">
         <div className="steps-demo">
           <Toast ref={toast}></Toast>
+          <div className="card">
+                <ConfirmDialog visible={visibleOverwrite} onHide={() => setVisibleOverwrite(false)} message="Keep existing files as it is? If you choose NO, existing files will be overwritten."
+                    header="Keep Files/Overwrite" icon="pi pi-exclamation-triangle" accept={() => {processMWHOverWrite(meter.pk,false)}} reject={() => {processMWHOverWrite(meter.pk,true)}} />
+            </div>
+        
 
           <div className="card">
             <div className="p-grid">

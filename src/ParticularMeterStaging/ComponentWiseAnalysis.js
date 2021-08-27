@@ -3,6 +3,7 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import { Dropdown } from "primereact/dropdown";
+import proxyServer from "../GlobalVars";
 
 import React, { useState, useEffect } from "react";
 import "primeflex/primeflex.css";
@@ -37,6 +38,19 @@ export default function ChangeMeterDataComponent(props) {
       })
       .catch((error) => {});
   };
+  
+  // const componentWiseExcelData = () => {
+  //   const uploadData = new FormData();
+  //   uploadData.append("meterEndToExcelData", selectedEnd["name"]);
+  //   axios
+  //     .post("/fifteenmmdp/componentWiseExcelData/" + props.meterId, uploadData)
+  //     .then((response) => {
+  //       console.log("done");
+  //       // console.log(response.data);
+  //       // setComponentData(response.data);
+  //     })
+  //     .catch((error) => {});
+  // };
 
   useEffect(() => {
     setEnds([
@@ -79,7 +93,25 @@ export default function ChangeMeterDataComponent(props) {
           }}
         />
       </div>{" "}
-      <div className="p-col"></div>
+      <div className="p-col">
+        <br />
+      
+        <a
+          href={
+              proxyServer +
+              "/fifteenmmdp/componentWiseExcelData/" +
+              props.meterId + "/" + selectedEnd["name"]
+            }
+          >
+            <Button
+                icon="pi pi-file-excel"
+                className="p-button-rounded p-button-info p-button-outlined"
+              // onClick={downLoadFullRealMeterMWHFiles}
+            />
+          </a>
+                {"  "}Download data in Excel
+      </div>{" "}
+      {/* <div className="p-col"></div> */}
       <div className="p-col">Work with Component-Wise Data</div>
       <Plot
         data={componentData}

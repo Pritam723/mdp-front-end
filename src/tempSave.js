@@ -1,64 +1,29 @@
-import React, { useState } from "react";
-import { Dialog } from "primereact/dialog";
-import { Button } from "primereact/button";
-import "./cssFiles/DialogDemo.css";
+import React, { useState, useRef } from 'react';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
 
-export default function DialogDemo() {
-  const [displayResponsive, setDisplayResponsive] = useState(false);
+export default function ConfirmDialogDemo(){
+    const [visibleOverwrite, setVisibleOverwrite] = useState(false);
+    const toast = useRef(null);
 
-  const dialogFuncMap = {
-    displayResponsive: setDisplayResponsive,
-  };
+    const processMWHOverWrite = () => {
+        console.log("true")
+    }
 
-  const onClick = (name, position) => {
-    dialogFuncMap[`${name}`](true);
-  };
+    const processMWHNoOverWrite = () => {
+      console.log("false")
+    }
 
-  const onHide = (name) => {
-    dialogFuncMap[`${name}`](false);
-  };
-
-  const renderFooter = (name) => {
     return (
-      <div>
-        <Button
-          label="Close"
-          icon="pi pi-times"
-          onClick={() => onHide(name)}
-          className="p-button-text"
-        />
-      </div>
-    );
-  };
+        <div>
+            <Toast ref={toast} />
 
-  return (
-    <div className="dialog-demo">
-      <div className="card">
-        <h5>Responsive</h5>
-        <Button
-          label="Show"
-          icon="pi pi-external-link"
-          onClick={() => onClick("displayResponsive")}
-        />
-        <Dialog
-          header="Header"
-          visible={displayResponsive}
-          onHide={() => onHide("displayResponsive")}
-          breakpoints={{ "960px": "75vw" }}
-          style={{ width: "50vw" }}
-          footer={renderFooter("displayResponsive")}
-        >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </Dialog>
-      </div>
-    </div>
-  );
+            <div className="card">
+                <ConfirmDialog visibleOverwrite={visibleOverwrite} onHide={() => setVisibleOverwrite(false)} message="Do you want to overwrite existing files?"
+                    header="Overwrite" icon="pi pi-exclamation-triangle" accept={processMWHOverWrite} reject={processMWHNoOverWrite} />
+                {/* <Button onClick={() => setVisibleOverwrite(true)} className="p-button-rounded" label="Create Real Meter MWH" /> */}
+            </div>
+        </div>
+    )
 }

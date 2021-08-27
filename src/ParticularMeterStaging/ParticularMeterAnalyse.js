@@ -18,6 +18,7 @@ import Plot from "react-plotly.js";
 import { Dropdown } from "primereact/dropdown";
 import { CascadeSelect } from "primereact/cascadeselect";
 import { Divider } from "primereact/divider";
+import proxyServer from "../GlobalVars";
 
 import "../cssFiles/AccordionDemo.css";
 import ChangeMeterDataComponent from "./ChangeMeterDataComponent";
@@ -30,6 +31,7 @@ export default function ParticularMeter(props) {
   const [end1Data, setEnd1Data] = useState([]);
   const [end2data, setEnd2Data] = useState([]);
   const [diff, setDiff] = useState([]);
+  const [diffPercentage, setDiffPercentage] = useState([]);
 
   const [stateWiseData, setStateWiseData] = useState({});
   const [feeders, setFeeders] = useState([]);
@@ -154,7 +156,7 @@ export default function ParticularMeter(props) {
         setEnd1Data(response.data.end1Data);
         setEnd2Data(response.data.end2Data);
         setDiff(response.data.diff);
-
+        setDiffPercentage(response.data.diffPercentage)
         // window.location.reload();
       })
       .catch((error) => {});
@@ -206,7 +208,33 @@ export default function ParticularMeter(props) {
                 className="p-button-rounded p-button-success"
                 onClick={fetchGraphData}
               />
-            </div>{" "}
+         
+   
+        {"  "}   
+        <a
+          href={
+              proxyServer +
+              "/fifteenmmdp/fetchGraphDataExcel/" +
+              meterIdParam + "/" + selectedFeeder["End1"].trim() +
+              "/" +
+              selectedFeeder["End2"].trim() +
+              "/" +
+              polarity.multiplier
+            }
+          >
+            <Button
+                icon="pi pi-file-excel"
+                className="p-button-rounded p-button-info p-button-outlined"
+            />
+          </a>
+      </div>{" "}
+
+
+
+
+
+
+            
             <div className="p-col">Work with graph </div>
           </div>
           {selectedEntity ? (
@@ -233,6 +261,13 @@ export default function ParticularMeter(props) {
                   y: diff,
                   marker: { color: "green" },
                   name: "Difference",
+                },
+                {
+                  type: "line",
+                  x: xAxisData,
+                  y: diffPercentage,
+                  marker: { color: "purple" },
+                  name: "Difference Percentage",
                 },
               ]}
               layout={{
