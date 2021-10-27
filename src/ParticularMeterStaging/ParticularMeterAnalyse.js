@@ -182,11 +182,13 @@ export default function ParticularMeter(props) {
             </div>
             <div className="p-col">
               <div className="dropdown-demo">
+
                 <Dropdown
                   value={selectedFeeder}
                   options={feeders}
                   onChange={onFeederChange}
                   optionLabel="Feeder Name"
+                  filter filterBy="Feeder Name"
                   placeholder="Select Feeder"
                 />
               </div>{" "}
@@ -227,15 +229,24 @@ export default function ParticularMeter(props) {
                 className="p-button-rounded p-button-info p-button-outlined"
             />
           </a>
+          {"  "}
+          <a
+          href={
+              proxyServer +
+              "/fifteenmmdp/fetchMeterChangeLog/" +
+              meterIdParam
+            }
+            target="_blank"
+          >
+            <Button
+                icon="pi pi-book"
+                className="p-button-rounded p-button-info p-button-outlined"
+            />
+          </a>
+
+
       </div>{" "}
-
-
-
-
-
-
-            
-            <div className="p-col">Work with graph </div>
+          <div className="p-col">Work with graph </div>
           </div>
           {selectedEntity ? (
             <Plot
