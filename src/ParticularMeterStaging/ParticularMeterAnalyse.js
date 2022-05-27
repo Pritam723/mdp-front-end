@@ -97,6 +97,11 @@ export default function ParticularMeter(props) {
       name: "TRANSNATIONAL",
     },
     {
+      type: "PGCIL",
+      code: "pgcil",
+      name: "PGCIL",
+    },
+    {
       type: "Others",
       code: "others",
       name: "Others",

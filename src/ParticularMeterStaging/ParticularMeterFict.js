@@ -119,6 +119,22 @@ export default function ParticularMeterMWH(props) {
                 </a>
                 {"  "}Download Files
               </div>
+              <div className="p-col">
+                <a
+                  href={
+                    proxyServer +
+                    "/fifteenmmdp/downLoadFullAllMWHFiles/" +
+                    meterIdParam
+                  }
+                >
+                  <Button
+                    icon="pi pi-download"
+                    className="p-button-rounded p-button-help"
+                    // onClick={downLoadFullRealMeterMWHFiles}
+                  />
+                </a>
+                {"  "}Download All Meter Files(Datewise)
+              </div>
             </div>
           ) : (
             "Fictitious Meter MWH Files not created yet"
