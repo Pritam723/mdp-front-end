@@ -74,6 +74,7 @@ export default function ParticularMeter(props) {
         { name: "MTPS", code: "MTPS" },
         { name: "NPGC", code: "NPGC" },
         { name: "NHPC", code: "NHPC" },
+        { name: "NORTH KARANPURA", code: "NORTH KARANPURA" },
         { name: "TALCHER  SOLAR", code: "TALCHER  SOLAR" },
       ],
     },
@@ -91,7 +92,8 @@ export default function ParticularMeter(props) {
       type: "IPP",
       code: "ipp",
       name: "IPP",
-    },   {
+    },
+    {
       type: "TRANSNATIONAL",
       code: "transnational",
       name: "TRANSNATIONAL",
@@ -161,7 +163,7 @@ export default function ParticularMeter(props) {
         setEnd1Data(response.data.end1Data);
         setEnd2Data(response.data.end2Data);
         setDiff(response.data.diff);
-        setDiffPercentage(response.data.diffPercentage)
+        setDiffPercentage(response.data.diffPercentage);
         // window.location.reload();
       })
       .catch((error) => {});
@@ -187,13 +189,13 @@ export default function ParticularMeter(props) {
             </div>
             <div className="p-col">
               <div className="dropdown-demo">
-
                 <Dropdown
                   value={selectedFeeder}
                   options={feeders}
                   onChange={onFeederChange}
                   optionLabel="Feeder Name"
-                  filter filterBy="Feeder Name"
+                  filter
+                  filterBy="Feeder Name"
                   placeholder="Select Feeder"
                 />
               </div>{" "}
@@ -215,43 +217,42 @@ export default function ParticularMeter(props) {
                 className="p-button-rounded p-button-success"
                 onClick={fetchGraphData}
               />
-         
-   
-        {"  "}   
-        <a
-          href={
-              proxyServer +
-              "/fifteenmmdp/fetchGraphDataExcel/" +
-              meterIdParam + "/" + selectedFeeder["End1"].trim() +
-              "/" +
-              selectedFeeder["End2"].trim() +
-              "/" +
-              polarity.multiplier
-            }
-          >
-            <Button
-                icon="pi pi-file-excel"
-                className="p-button-rounded p-button-info p-button-outlined"
-            />
-          </a>
-          {"  "}
-          <a
-          href={
-              proxyServer +
-              "/fifteenmmdp/fetchMeterChangeLog/" +
-              meterIdParam
-            }
-            target="_blank"
-          >
-            <Button
-                icon="pi pi-book"
-                className="p-button-rounded p-button-info p-button-outlined"
-            />
-          </a>
 
-
-      </div>{" "}
-          <div className="p-col">Work with graph </div>
+              {"  "}
+              <a
+                href={
+                  proxyServer +
+                  "/fifteenmmdp/fetchGraphDataExcel/" +
+                  meterIdParam +
+                  "/" +
+                  selectedFeeder["End1"].trim() +
+                  "/" +
+                  selectedFeeder["End2"].trim() +
+                  "/" +
+                  polarity.multiplier
+                }
+              >
+                <Button
+                  icon="pi pi-file-excel"
+                  className="p-button-rounded p-button-info p-button-outlined"
+                />
+              </a>
+              {"  "}
+              <a
+                href={
+                  proxyServer +
+                  "/fifteenmmdp/fetchMeterChangeLog/" +
+                  meterIdParam
+                }
+                target="_blank"
+              >
+                <Button
+                  icon="pi pi-book"
+                  className="p-button-rounded p-button-info p-button-outlined"
+                />
+              </a>
+            </div>{" "}
+            <div className="p-col">Work with graph </div>
           </div>
           {selectedEntity ? (
             <Plot
@@ -299,6 +300,8 @@ export default function ParticularMeter(props) {
           {selectedFeeder["End1"] || selectedFeeder["End2"] ? (
             <ChangeMeterDataComponent
               meterId={meterIdParam}
+              entity={selectedEntity["name"]}
+              feederName={selectedFeeder["Feeder Name"]}
               end1={selectedFeeder["End1"].trim()}
               end2={selectedFeeder["End2"].trim()}
               fetchGraphDataAgain={fetchGraphData}

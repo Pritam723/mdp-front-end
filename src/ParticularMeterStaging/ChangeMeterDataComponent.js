@@ -29,6 +29,10 @@ export default function ChangeMeterDataComponent(props) {
     name: "No Data",
     code: "No Data",
   });
+
+  const [entityName, setEntityName] = useState("");
+  const [feederName, setFeederName] = useState("");
+
   const onStartDateChange = (e) => {
     setStartDate(e.value);
     console.log(e.value);
@@ -48,7 +52,14 @@ export default function ChangeMeterDataComponent(props) {
   const changeMeterEndData = () => {
     const uploadData = new FormData();
     uploadData.append("meterEndToReplace", selectedEnd["name"]);
+    uploadData.append(
+      "otherEnd",
+      ends.filter((item) => item.name !== selectedEnd["name"])[0]["name"]
+    );
     uploadData.append("equationToReplaceWith", equation);
+    uploadData.append("entityName", entityName);
+    uploadData.append("feederName", feederName);
+
     uploadData.append(
       "startDate",
       moment(startDate).format("MM/DD/YYYY HH:mm:ss")
@@ -68,6 +79,12 @@ export default function ChangeMeterDataComponent(props) {
   const revertMeterEndData = () => {
     const uploadData = new FormData();
     uploadData.append("meterEndToReplace", selectedEnd["name"]);
+    uploadData.append(
+      "otherEnd",
+      ends.filter((item) => item.name !== selectedEnd["name"])[0]["name"]
+    );
+    uploadData.append("entityName", entityName);
+    uploadData.append("feederName", feederName);
     axios
       .post("/fifteenmmdp/revertMeterEndData/" + props.meterId, uploadData)
       .then((response) => {
@@ -80,6 +97,12 @@ export default function ChangeMeterDataComponent(props) {
   const zeroFillMeterEndData = () => {
     const uploadData = new FormData();
     uploadData.append("meterEndToReplace", selectedEnd["name"]);
+    uploadData.append(
+      "otherEnd",
+      ends.filter((item) => item.name !== selectedEnd["name"])[0]["name"]
+    );
+    uploadData.append("entityName", entityName);
+    uploadData.append("feederName", feederName);
     axios
       .post("/fifteenmmdp/zeroFillMeterEndData/" + props.meterId, uploadData)
       .then((response) => {
@@ -95,6 +118,8 @@ export default function ChangeMeterDataComponent(props) {
       { name: props.end2, code: props.end2 },
     ]);
     setSelectedEnd({ name: props.end1, code: props.end1 });
+    setEntityName(props.entity);
+    setFeederName(props.feederName);
     setEquation("");
   }, [props]);
   useEffect(() => {

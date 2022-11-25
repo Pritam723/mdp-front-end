@@ -38,7 +38,14 @@ export default function ParticularMeterFinalOutput(props) {
   const [dateWiseFODir, setdateWiseFODir] = useState({});
   const [dates, setDates] = useState([]);
   const [sendDir, setSendDir] = useState(null);
+  const [reload, setReload] = useState(false);
 
+  const reloadListedData = () => {
+    setReload(true);
+    fetch("/fifteenmmdp/reloadFinalOutputData/" + meterIdParam).then((res) =>
+      window.location.reload()
+    );
+  };
   useEffect(() => {
     fetch("/fifteenmmdp/getFinalOutputData/" + meterIdParam)
       .then((res) => res.json())
@@ -120,7 +127,51 @@ export default function ParticularMeterFinalOutput(props) {
                 {"  "}Download Final Output Files
               </div>
 
-              
+              <div className="p-col">
+                <a
+                  href={
+                    proxyServer +
+                    "/fifteenmmdp/finalOutputExcel/" +
+                    meterIdParam
+                  }
+                >
+                  <Button
+                    icon="pi pi-download"
+                    className="p-button-rounded p-button-help"
+                    // onClick={downLoadFullRealMeterMWHFiles}
+                  />
+                </a>
+                {"  "}Download Final Output Excel File
+                <br /> <br />
+                <a
+                  href={
+                    proxyServer + "/fifteenmmdp/nldcLossExcel/" + meterIdParam
+                  }
+                >
+                  <Button
+                    icon="pi pi-download"
+                    className="p-button-rounded p-button-help"
+                    // onClick={downLoadFullRealMeterMWHFiles}
+                  />
+                </a>
+                {"  "}Download NLDC Loss File
+              </div>
+
+              <div className="p-col">
+                {!reload ? (
+                  <Button
+                    icon="pi pi-undo"
+                    className="p-button-rounded p-button-info p-button-outlined"
+                    onClick={reloadListedData}
+                  />
+                ) : (
+                  <i
+                    className="pi pi-spin pi-spinner"
+                    style={{ fontSize: "2em" }}
+                  ></i>
+                )}
+                {"   "}Reload Listed Files{" "}
+              </div>
             </div>
           ) : (
             "Final Output Files not created yet"

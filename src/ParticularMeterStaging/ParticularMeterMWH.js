@@ -39,6 +39,7 @@ export default function ParticularMeterMWH(props) {
   const [dateWiseMWHDir, setdateWiseMWHDir] = useState({});
   const [dates, setDates] = useState([]);
   const [sendDir, setSendDir] = useState(null);
+  const [reload, setReload] = useState(false);
 
   // const downLoadFullRealMeterMWHFiles = () => {
   //   "/fifteenmmdp/downloadRealMeterMWHFile/8/7"
@@ -75,6 +76,13 @@ export default function ParticularMeterMWH(props) {
     //   console.log("Some server side error");
     // });
   }, []);
+
+  const reloadListedData = () => {
+    setReload(true);
+    fetch("/fifteenmmdp/reloadRealMeterMWHData/" + meterIdParam).then((res) =>
+      window.location.reload()
+    );
+  };
 
   return (
     <>
@@ -125,6 +133,21 @@ export default function ParticularMeterMWH(props) {
                   />
                 </a>
                 {"  "}Download Files
+              </div>
+              <div className="p-col">
+                {!reload ? (
+                  <Button
+                    icon="pi pi-undo"
+                    className="p-button-rounded p-button-info p-button-outlined"
+                    onClick={reloadListedData}
+                  />
+                ) : (
+                  <i
+                    className="pi pi-spin pi-spinner"
+                    style={{ fontSize: "2em" }}
+                  ></i>
+                )}
+                {"   "}Reload Listed Files{" "}
               </div>
               <Divider />
               <FrequencyGraph meterId={meterIdParam} />

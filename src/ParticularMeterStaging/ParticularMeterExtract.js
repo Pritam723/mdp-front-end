@@ -30,7 +30,7 @@ export default function ParticularMeterExtract(props) {
   let match = useRouteMatch();
 
   const [npcData, setNpcData] = useState(emptyNPC);
-
+  const [reload, setReload] = useState(false);
   useEffect(() => {
     fetch("/fifteenmmdp/getNPCData/" + meterIdParam)
       .then((res) => res.json())
@@ -45,6 +45,13 @@ export default function ParticularMeterExtract(props) {
       });
   }, []);
 
+  const reloadListedData = () => {
+    setReload(true);
+    fetch("/fifteenmmdp/reloadNPCData/" + meterIdParam).then((res) =>
+      window.location.reload()
+    );
+  };
+
   return (
     <>
       <div className="p-col">
@@ -58,11 +65,30 @@ export default function ParticularMeterExtract(props) {
               ></ProgressBar>
             </>
           ) : npcData.fields.dirStructureNPC ? (
-            <FolderStructure
-              dir={JSON.parse(npcData.fields.dirStructureNPC)}
-              fileType="NPCFiles"
-              meterId={npcData.fields.meterFile}
-            />
+            <div className="p-grid">
+              <div className="p-col">
+                <FolderStructure
+                  dir={JSON.parse(npcData.fields.dirStructureNPC)}
+                  fileType="NPCFiles"
+                  meterId={npcData.fields.meterFile}
+                />{" "}
+              </div>
+              <div className="p-col">
+                {!reload ? (
+                  <Button
+                    icon="pi pi-undo"
+                    className="p-button-rounded p-button-info p-button-outlined"
+                    onClick={reloadListedData}
+                  />
+                ) : (
+                  <i
+                    className="pi pi-spin pi-spinner"
+                    style={{ fontSize: "2em" }}
+                  ></i>
+                )}
+                {"   "}Reload Listed Files{" "}
+              </div>
+            </div>
           ) : (
             "Meter File not extracted yet"
           )}

@@ -38,7 +38,14 @@ export default function ParticularMeterMWH(props) {
   const [dateWiseMWHDir, setdateWiseMWHDir] = useState({});
   const [dates, setDates] = useState([]);
   const [sendDir, setSendDir] = useState(null);
+  const [reload, setReload] = useState(false);
 
+  const reloadListedData = () => {
+    setReload(true);
+    fetch("/fifteenmmdp/reloadFictMeterMWHData/" + meterIdParam).then((res) =>
+      window.location.reload()
+    );
+  };
   useEffect(() => {
     fetch("/fifteenmmdp/getFictMeterMWHData/" + meterIdParam)
       .then((res) => res.json())
@@ -118,8 +125,7 @@ export default function ParticularMeterMWH(props) {
                   />
                 </a>
                 {"  "}Download Files
-              </div>
-              <div className="p-col">
+                <br /> <br />
                 <a
                   href={
                     proxyServer +
@@ -134,6 +140,21 @@ export default function ParticularMeterMWH(props) {
                   />
                 </a>
                 {"  "}Download All Meter Files(Datewise)
+              </div>
+              <div className="p-col">
+                {!reload ? (
+                  <Button
+                    icon="pi pi-undo"
+                    className="p-button-rounded p-button-info p-button-outlined"
+                    onClick={reloadListedData}
+                  />
+                ) : (
+                  <i
+                    className="pi pi-spin pi-spinner"
+                    style={{ fontSize: "2em" }}
+                  ></i>
+                )}
+                {"   "}Reload Listed Files{" "}
               </div>
             </div>
           ) : (
