@@ -30,9 +30,6 @@ import ParticularMeterFict from "./ParticularMeterStaging/ParticularMeterFict";
 import ParticularMeterFinalOutput from "./ParticularMeterStaging/ParticularMeterFinalOutput";
 import ParticularMeterAnalyse from "./ParticularMeterStaging/ParticularMeterAnalyse";
 import ParticularMeterSpecialReport from "./ParticularMeterStaging/ParticularMeterSpecialReport";
-import SelectMeters from "./SelectMeters";
-import SelectFictMeters from "./SelectFictMeters";
-import SelectDates from "./SelectDates";
 
 import { Steps } from "primereact/steps";
 import { Toast } from "primereact/toast";
@@ -179,25 +176,95 @@ export default function ParticularMeter(props) {
   const [visibleOverwrite, setVisibleOverwrite] = useState(false);
   const toast = useRef(null);
 
-  ///////////////////////////////////////
-  const selectDatesRef = useRef();
-  const selectMetersRef = useRef();
-  const selectFictMetersRef = useRef();
+  ////////////////////////////////////
 
-  const getAllDates = () => {
-    const x = selectDatesRef.current.getDates();
-    console.log(x);
-  };
+  function SelectMeters(props) {
+    const [selectedMeters, setSelectedMeters] = useState(null);
+    const [meters, setMeters] = useState([]);
+    useEffect(() => {
+      fetch("/fifteenmmdp/getRealMetersListed/" + props.meterId)
+        .then((res) => res.json())
+        .then((result) => {
+          // console.log(result);
+          setMeters(result);
+          setSelectedMeters(result);
+        });
+    }, []);
 
-  const getAllMeters = () => {
-    const x = selectMetersRef.current.getMeters();
-    console.log(x);
-  };
+    return (
+      <div className="card">
+        <h5>Select Real Meters</h5>
+        <MultiSelect
+          value={selectedMeters}
+          options={meters}
+          onChange={(e) => setSelectedMeters(e.value)}
+          optionLabel="name"
+          placeholder="Select Real Meters"
+          maxSelectedLabels={1}
+          filter={true}
+          virtualScrollerOptions={{ itemSize: 43 }}
+        />
+      </div>
+    );
+  }
 
-  const getAllFictMeters = () => {
-    const x = selectFictMetersRef.current.getFictMeters();
-    console.log(x);
-  };
+  function SelectFictMeters(props) {
+    const [selectedFictMeters, setSelectedFictMeters] = useState(null);
+    const [fictMeters, setFictMeters] = useState([]);
+    useEffect(() => {
+      fetch("/fifteenmmdp/getFictMetersListed/" + props.meterId)
+        .then((res) => res.json())
+        .then((result) => {
+          // console.log(result);
+          setFictMeters(result);
+          setSelectedFictMeters(result);
+        });
+    }, []);
+
+    return (
+      <div className="card">
+        <h5>Select Fictitious Meters</h5>
+        <MultiSelect
+          value={selectedFictMeters}
+          options={fictMeters}
+          onChange={(e) => setSelectedFictMeters(e.value)}
+          optionLabel="name"
+          placeholder="Select Fictitious Meters"
+          maxSelectedLabels={1}
+          filter={true}
+        />
+      </div>
+    );
+  }
+
+  function SelectDates(props) {
+    const [selectedDates, setSelectedDates] = useState(null);
+    const [dates, setDates] = useState([]);
+    useEffect(() => {
+      fetch("/fifteenmmdp/getAllDates/" + props.meterId)
+        .then((res) => res.json())
+        .then((result) => {
+          // console.log(result);
+          setDates(result);
+          setSelectedDates(result);
+        });
+    }, []);
+
+    return (
+      <div className="card">
+        <h5>Select Dates</h5>
+        <MultiSelect
+          value={selectedDates}
+          options={dates}
+          onChange={(e) => setSelectedDates(e.value)}
+          optionLabel="name"
+          placeholder="Select Dates"
+          maxSelectedLabels={1}
+          filter={true}
+        />
+      </div>
+    );
+  }
 
   //////////////////////////////////////
 
@@ -226,78 +293,11 @@ export default function ParticularMeter(props) {
   //   }
   // }
 
-  const showWarn = () => {
-    toast.current.show({
-      severity: "warn",
-      summary: "No meter/date selected.",
-      detail: "Please select at least one meter and at least one date.",
-      life: 3000,
-    });
-  };
-
   const processMWHOverWrite = (id, overwriteParam) => {
     console.log("already called");
-
-    const allMeterDates = {
-      realMeters: selectMetersRef.current.getMeters(),
-      dates: selectDatesRef.current.getDates(),
-    };
-    if (
-      allMeterDates.realMeters.length == 0 ||
-      allMeterDates.dates.length == 0
-    ) {
-      showWarn();
-      return;
-    }
     setProgressbarVisible(true);
-
     axios
-      .post(
-        "/fifteenmmdp/realMeterMWH/" + id + "/" + overwriteParam,
-        allMeterDates
-      )
-      .then((response) => {
-        // console.log(response);
-        setProgressbarVisible(false);
-
-        window.location.reload();
-      })
-      .catch((error) => {
-        setProgressbarVisible(false);
-
-        console.log(error.response.data);
-        let formattedErrors = [];
-        error.response.data.forEach((error, index) => {
-          formattedErrors.push(
-            <h6 style={{ color: "Tomato" }}>
-              {"(" + (index + 1) + ") " + error}
-              <br />
-            </h6>
-          );
-        });
-        setErrorMsg(formattedErrors);
-        // console.log("dfdf");
-
-        // console.log(error.message);
-      });
-  };
-
-  const processFictMWH = (id) => {
-    const allMeterDates = {
-      fictMeters: selectFictMetersRef.current.getFictMeters(),
-      dates: selectDatesRef.current.getDates(),
-    };
-    if (
-      allMeterDates.fictMeters.length == 0 ||
-      allMeterDates.dates.length == 0
-    ) {
-      showWarn();
-      return;
-    }
-    setProgressbarVisible(true);
-
-    axios
-      .post("/fifteenmmdp/fictMeterMWH/" + id, allMeterDates)
+      .post("/fifteenmmdp/realMeterMWH/" + id + "/" + overwriteParam)
       .then((response) => {
         // console.log(response);
         setProgressbarVisible(false);
@@ -329,17 +329,7 @@ export default function ParticularMeter(props) {
 
     if (process[activeIndex] == "realMeterMWH") {
       // console.log("i work")
-      // setVisibleOverwrite(true);
-
-      processMWHOverWrite(id, true);
-      return;
-    }
-
-    if (process[activeIndex] == "fictMeterMWH") {
-      // setVisibleOverwrite(true);
-
-      processFictMWH(id);
-
+      setVisibleOverwrite(true);
       return;
     }
 
@@ -382,25 +372,14 @@ export default function ParticularMeter(props) {
           className="p-button-rounded"
           onClick={() => processMeterData(props.id)}
         />
-        {processStage == "Create Real Meter MWH" ||
-        processStage == "Create Fictitious Meter MWH" ? (
+        {props.id == 513 &&
+        (processStage == "Create Real Meter MWH" ||
+          processStage == "Create Fictitious Meter MWH") ? (
           <div>
             {processStage == "Create Real Meter MWH" ? (
-              <>
-                <SelectMeters meterId={props.id} ref={selectMetersRef} />
-                {/* <button onClick={getAllMeters}> Get Real Meters </button> */}
-              </>
+              <SelectMeters meterId={props.id} />
             ) : (
-              <>
-                <SelectFictMeters
-                  meterId={props.id}
-                  ref={selectFictMetersRef}
-                />
-                {/* <button onClick={getAllFictMeters}>
-                  {" "}
-                  Get Fictitious Meters{" "}
-                </button> */}
-              </>
+              <SelectFictMeters meterId={props.id} />
             )}
           </div>
         ) : (
@@ -487,12 +466,10 @@ export default function ParticularMeter(props) {
               <div className="p-col">
                 {" "}
                 <h5>Status</h5> {meter.fields.status}{" "}
-                {processStage == "Create Real Meter MWH" ||
-                processStage == "Create Fictitious Meter MWH" ? (
-                  <>
-                    <SelectDates meterId={meter.pk} ref={selectDatesRef} />
-                    {/* <button onClick={getAllDates}> Get Dates </button> */}
-                  </>
+                {meter.pk == 513 &&
+                (processStage == "Create Real Meter MWH" ||
+                  processStage == "Create Fictitious Meter MWH") ? (
+                  <SelectDates meterId={meter.pk} />
                 ) : (
                   ""
                 )}

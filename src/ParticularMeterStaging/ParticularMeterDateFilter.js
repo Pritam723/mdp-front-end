@@ -49,6 +49,11 @@ export default function ParticularMeter(props) {
         />{" "}
         <a href={proxyServer + "/fifteenmmdp/downloadNrxFile/" + meterIdParam}>
           <Button label="NRX File" className="p-button-link" />
+        </a>{" "}
+        <a
+          href={proxyServer + "/fifteenmmdp/downloadNewNrxFile/" + meterIdParam}
+        >
+          <Button label="NEW NRX File" className="p-button-link" />
         </a>
       </div>
     );
